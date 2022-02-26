@@ -88,7 +88,7 @@ let menu = Menu.buildFromTemplate([
     ]
   },
 ])
-Menu.setApplicationMenu(menu) 
+  Menu.setApplicationMenu(menu) 
   
   const blocker = await ElectronBlocker.fromLists(
     fetch,
