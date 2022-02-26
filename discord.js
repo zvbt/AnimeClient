@@ -15,7 +15,7 @@ module.exports = function discord(mainWindow) {
     discordClient.updatePresence({
       state: title,
       details: "Regarde",
-      startTimestamp: Date.now(),
+      //startTimestamp: Date.now(),
       largeImageKey: 'logo',
       smallImageKey: 'none',
       instance: true
