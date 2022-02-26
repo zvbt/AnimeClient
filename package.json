@@ -1,0 +1,24 @@
+{
+  "name": "animeclient",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . AnimeClient --platform=win32 --arch=x64 --overwrite --electron-version=17.1.0 --icon=./build/logo.png"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cliqz/adblocker-electron": "^1.23.6",
+    "cross-fetch": "^3.1.5",
+    "discord-rich-presence": "^0.0.8",
+    "fetch": "^1.1.0",
+    "fs": "^0.0.1-security",
+    "ts-node": "^10.5.0"
+  },
+  "devDependencies": {
+    "electron": "^17.1.0",
+    "electron-packager": "^15.4.0"
+  },
+  "description": "Une application qui regroupe plusieurs platformes de streaming d'animes vostfr/vf"
+}

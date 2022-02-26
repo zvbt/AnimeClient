@@ -1,0 +1,117 @@
+body{
+    margin: auto;
+    background-color: #171717;
+  }
+
+  
+  .text {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%,-50%);
+      color: #fff;
+      max-width: 90%;
+      padding: 2em 3em;
+      background: rgba(0, 0, 0, 0.4);
+      text-shadow: 0px 0px 2px #131415;
+      font-family: 'Roboto', sans-serif;
+  }
+  
+  h1 {
+      font-size: 2.25em;
+      font-weight: 700;
+      letter-spacing: -1px;
+  }
+  
+  a,
+  a:visited {
+      color: #e34234;
+      transition: 0.25s;
+  }
+  
+  a:hover,
+  a:focus {
+      color: #ba160c;
+  }
+  
+  .rainbow {
+    animation: rainbow 5s infinite;
+  
+  }
+  
+  @keyframes rainbow{
+    0%{color: orange;}
+    10%{color: purple;}
+      20%{color: red;}
+    30%{color: CadetBlue;}
+      40%{color: yellow;}
+    50%{color: coral;}
+      60%{color: green;}
+    70%{color: cyan;}
+    80%{color: DeepPink;}
+    90%{color: DodgerBlue;}
+      100%{color: orange;}
+  }
+  
+  .rainbow2 {
+    animation: rainbow2 5s infinite;
+  
+  }
+  
+  @keyframes rainbow2{
+    0%{color: orange;}
+    10%{color: purple;}
+      20%{color: red;}
+    30%{color: CadetBlue;}
+      40%{color: yellow;}
+    50%{color: coral;}
+      60%{color: green;}
+    70%{color: cyan;}
+    80%{color: DeepPink;}
+    90%{color: DodgerBlue;}
+      100%{color: orange;}
+  }
+  
+  
+  
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #008BFF;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    top: 100%;
+    left: -25%;
+  
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: hidden;
+  }
+  
+  body:after{
+    content: "beta";
+    position: fixed;
+    width: 80px;
+    height: 25px;
+    background: #ee4a4a;
+    top: 5px;
+    right: -20px;
+    text-align: center;
+    font-size: 13px;
+    font-family:'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    line-height: 27px;
+    transform:rotate(45deg);
+  }
