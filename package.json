@@ -2,11 +2,12 @@
   "name": "animeclient",
   "version": "1.0.0",
   "main": "index.js",
+  "description": "Une application qui regroupe plusieurs platformes de streaming d'animes vostfr/vf",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . AnimeClient --platform=win32 --arch=x64 --overwrite --electron-version=17.1.0 --icon=./build/logo.png"
+    "build": "electron-packager . AnimeClient --win32 --icon=./build/logo.png"
   },
-  "author": "",
+  "author": "zvbt",
   "license": "ISC",
   "dependencies": {
     "@cliqz/adblocker-electron": "^1.23.6",
@@ -19,6 +20,5 @@
   "devDependencies": {
     "electron": "^17.1.0",
     "electron-packager": "^15.4.0"
-  },
-  "description": "Une application qui regroupe plusieurs platformes de streaming d'animes vostfr/vf"
+  }
 }
