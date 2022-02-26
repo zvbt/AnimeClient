@@ -5,7 +5,7 @@
   "description": "Une application qui regroupe plusieurs platformes de streaming d'animes vostfr/vf",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . AnimeClient --win32 --icon=./build/logo.png"
+    "build": "electron-packager . AnimeClient --win32 --overwrite --icon=./build/logo.png"
   },
   "author": "zvbt",
   "license": "ISC",
