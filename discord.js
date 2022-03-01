@@ -11,13 +11,22 @@ discordClient.on("connected", () => {
 
 module.exports = function discord(mainWindow) {
 
-    let title = mainWindow.getTitle()
+  let title = mainWindow.getTitle()
+  if (title === "AnimeClient | BETA") {
     discordClient.updatePresence({
-      state: title,
-      details: "Regarde",
-      //startTimestamp: Date.now(),
+      details: "Page d'acceuil",
+      state: "v1.0.1-BETA",
       largeImageKey: 'logo',
       smallImageKey: 'none',
-      instance: true
+      instance: false
     });
+  } else {
+    discordClient.updatePresence({
+      details: title,
+      state: "᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼",
+      largeImageKey: 'logo',
+      smallImageKey: 'none',
+      instance: false
+    });
+    }
 };
