@@ -2,14 +2,13 @@ import { app, BrowserWindow, ipcMain, Menu, MenuItem,} from 'electron';
 import fetch from 'cross-fetch';
 import { readFileSync, writeFileSync } from 'fs';
 import { ElectronBlocker, fullLists, Request } from '@cliqz/adblocker-electron';
-const path = require('path')
+const InfiniteLoop = require('infinite-loop');
 const discord = require('./discord')
 
 
 let mainWindow: BrowserWindow | null = null
 
 async function createWindow() {
- 
   mainWindow = new BrowserWindow({
     webPreferences: {
       nodeIntegration: false,
@@ -40,26 +39,26 @@ let menu = Menu.buildFromTemplate([
         },
         accelerator: "Ctrl+Space"
       },
-      {
+     /* {
         label: "Console",
         click: () => {
           contents.openDevTools()
         },
         accelerator: "Ctrl+Shift+I"
-      },
+      },*/
       {
         label: "Go back",
         click: () => {
           contents.goBack()
         },
-        accelerator: "Ctrl+Alt+A"
+        accelerator: "Ctrl+Alt+Q"
       },
       {
         label: "Go forward",
         click: () => {
           contents.goForward()
         },
-        accelerator: "Ctrl+Alt+z"
+        accelerator: "Ctrl+Alt+S"
       },
       {
         type: "separator"
@@ -88,7 +87,7 @@ let menu = Menu.buildFromTemplate([
     ]
   },
 ])
-  Menu.setApplicationMenu(menu) 
+Menu.setApplicationMenu(menu) 
   
   const blocker = await ElectronBlocker.fromLists(
     fetch,
@@ -107,8 +106,7 @@ let menu = Menu.buildFromTemplate([
   blocker.enableBlockingInSession(mainWindow.webContents.session);
 
   blocker.on('request-blocked', (request: Request) => {
-    console.log('blocked', request.tabId, request.url);
-    discord(mainWindow);
+    console.log('blocked 1', request.tabId, request.url);
   });
 
   blocker.on('request-redirected', (request: Request) => {
@@ -134,8 +132,6 @@ let menu = Menu.buildFromTemplate([
   mainWindow.loadFile('./client/index.html')
   mainWindow.setTitle('AnimeClient | BETA')
   
- 
-
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
@@ -144,9 +140,9 @@ let menu = Menu.buildFromTemplate([
 }
 
 
+
 app.on('ready', () => {
   createWindow();
-  
 });
 
 app.on('window-all-closed', () => {
@@ -160,3 +156,15 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+
+
+let il = new InfiniteLoop;
+function discordrpc() {
+  discord(mainWindow);
+  console.log("Discord RPC updated")
+}
+
+il.add(discordrpc, []);
+il.setInterval(3000)
+il.run();

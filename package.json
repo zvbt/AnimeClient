@@ -1,11 +1,11 @@
 {
   "name": "animeclient",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "description": "Une application qui regroupe plusieurs platformes de streaming d'animes vostfr/vf",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . AnimeClient --win32 --overwrite --icon=./build/logo.png"
+    "build": "electron-packager . AnimeClient --overwrite --win32 --icon=./build/logo.png"
   },
   "author": "zvbt",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "discord-rich-presence": "^0.0.8",
     "fetch": "^1.1.0",
     "fs": "^0.0.1-security",
+    "infinite-loop": "^0.2.2",
     "ts-node": "^10.5.0"
   },
   "devDependencies": {
