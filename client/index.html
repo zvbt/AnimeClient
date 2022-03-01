@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <noscript>
-      <meta http-equiv="refresh" content="0.0;url=error.html"/>
-    </noscript>
+
     <meta charset="utf-8">
     <link rel="stylesheet" href="./main.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -13,9 +11,14 @@
       }
     </style>
     <link rel="icon" sizes="128x128" href="../build/logo.png">
-    <title>AnimeClient | BETA</title>
+    <title>AnimeClient | v1.0.1-BETA</title>
   </head>
   <body>
+    <video autoplay muted loop  controls autoplay playsinline style="pointer-events: none;" id="bgvid">
+      <source src="video.mp4" type="video/mp4">
+    </video>
+
+
     <div class="text">
       <div class="tooltip">
         <span class="tooltiptext">Crunchyroll</span>
@@ -47,6 +50,15 @@
           <img src="./img/vostfree.png"  style="width: 80px; height: 80px;"/>
          </a>
       </div>
+      <div class="tooltip">
+        <span class="tooltiptext">Toonami</span>
+        <a href="https://vvww.toonanime.cc/" >
+          <img src="./img/toonami.png"  style="width: 80px; height: 80px; margin-left: 10%;"/>
+         </a>
+      </div>
+    </div>
+
+
     </div>
     <script src="../renderer.js"></script>
   </body>
