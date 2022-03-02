@@ -3,4 +3,4 @@ Une application qui regroupe plusieurs platformes de streaming d'animes vostfr/v
 ![Preview](https://i.imgur.com/6uRBaUg.png)
 
 
-Fluid Animation: https://github.com/PavelDoGreat/WebGL-Fluid-Simulation
+Background video used: https://youtu.be/V_MX0HiIgRQ
