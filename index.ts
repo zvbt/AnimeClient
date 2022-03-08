@@ -1,11 +1,9 @@
-import { app, BrowserWindow, ipcMain, Menu, MenuItem,} from 'electron';
+import { app, BrowserWindow, Menu, session} from 'electron';
 import fetch from 'cross-fetch';
 import { readFileSync, writeFileSync } from 'fs';
 import { ElectronBlocker, fullLists, Request } from '@cliqz/adblocker-electron';
 const InfiniteLoop = require('infinite-loop');
 const discord = require('./discord')
-
-
 let mainWindow: BrowserWindow | null = null
 
 async function createWindow() {
@@ -20,14 +18,14 @@ async function createWindow() {
     fullscreen: false,
     width: 1280,
     height: 720,
-  
-
   });
+
   mainWindow.webContents.on('new-window', (event, url) => {
     event.preventDefault()
     console.log("popup blocked")
   })
   const contents = mainWindow.webContents;
+  
 let menu = Menu.buildFromTemplate([
   {
     label: "Menu",
@@ -39,13 +37,13 @@ let menu = Menu.buildFromTemplate([
         },
         accelerator: "Ctrl+Space"
       },
-     /* {
+      {
         label: "Console",
         click: () => {
           contents.openDevTools()
         },
         accelerator: "Ctrl+Shift+I"
-      },*/
+      },
       {
         label: "Go back",
         click: () => {
@@ -87,7 +85,7 @@ let menu = Menu.buildFromTemplate([
     ]
   },
 ])
-Menu.setApplicationMenu(menu) 
+  Menu.setApplicationMenu(menu) 
   
   const blocker = await ElectronBlocker.fromLists(
     fetch,
@@ -130,7 +128,7 @@ Menu.setApplicationMenu(menu)
   });
 
   mainWindow.loadFile('./client/index.html')
-  mainWindow.setTitle('AnimeClient | BETA')
+  mainWindow.setTitle('AnimeClient | v1.0.3-BETA')
   
   mainWindow.on('closed', () => {
     mainWindow = null;
@@ -139,10 +137,9 @@ Menu.setApplicationMenu(menu)
   mainWindow.setIcon('./build/logo.ico');
 }
 
-
-
 app.on('ready', () => {
   createWindow();
+  discord(mainWindow);
 });
 
 app.on('window-all-closed', () => {
@@ -158,13 +155,13 @@ app.on('activate', () => {
 });
 
 
-
 let il = new InfiniteLoop;
 function discordrpc() {
   discord(mainWindow);
   console.log("Discord RPC updated")
 }
 
+//idk how to make it in other way 
 il.add(discordrpc, []);
-il.setInterval(3000)
+il.setInterval(2000)
 il.run();
