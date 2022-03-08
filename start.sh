@@ -1,0 +1,1 @@
+java -Xmx16G -jar paper-1.18.2-235.jar
