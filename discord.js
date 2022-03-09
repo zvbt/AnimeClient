@@ -23,7 +23,14 @@ module.exports = function discord(mainWindow) {
       state: "v1.0.3-BETA",
       largeImageKey: 'logo',
       smallImageKey: 'none',
-      instance: false
+      instance: false,
+      buttons: [
+        {
+            "label": "Télécharger l'app",
+            "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+        }
+        
+    ]
     });
   }
 
@@ -36,7 +43,14 @@ module.exports = function discord(mainWindow) {
         state: "Page d'acceuil",
         largeImageKey: 'crunchy',
         smallImageKey: 'logo',
-        instance: false
+        instance: false,
+        buttons: [
+          {
+              "label": "Télécharger l'app",
+              "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+          }
+          
+      ]
       });
     }
     if (title.match("Watch on Crunchyroll")) {
@@ -45,7 +59,18 @@ module.exports = function discord(mainWindow) {
         state: cr_episode,
         largeImageKey: 'crunchy',
         smallImageKey: 'logo',
-        instance: false
+        instance: false,
+        buttons: [
+          {
+            "label": "Regarder l'épisode",
+            "url": mainWindow.webContents.getURL()
+          },
+          {
+              "label": "Télécharger l'app",
+              "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+          }
+          
+      ]
       });
     }
 
@@ -58,16 +83,34 @@ module.exports = function discord(mainWindow) {
       state: "Page d'acceuil",
       largeImageKey: 'nekosama',
       smallImageKey: 'logo',
-      instance: false
+      instance: false,
+      buttons: [
+        {
+            "label": "Télécharger l'app",
+            "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+        }
+        
+    ]
     });
   }
   if (neko_site.match("sama")) {
     discordClient.updatePresence({
       details: neko_site,
       state: neko_episode,
-      largeImageKey: 'logo',
-      smallImageKey: 'none',
-      instance: false
+      largeImageKey: 'nekosama',
+      smallImageKey: 'logo',
+      instance: false,
+      buttons: [
+        {
+          "label": "Regarder l'épisode",
+          "url": mainWindow.webContents.getURL()
+        },
+        {
+            "label": "Télécharger l'app",
+            "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+        }
+        
+    ]
     });
   }
 
@@ -83,7 +126,14 @@ module.exports = function discord(mainWindow) {
         state: "Page d'acceuil",
         largeImageKey: 'va',
         smallImageKey: 'logo',
-        instance: false
+        instance: false,
+        buttons: [
+          {
+              "label": "Télécharger l'app",
+              "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+          }
+          
+      ]
       });
   }
 
@@ -93,7 +143,18 @@ module.exports = function discord(mainWindow) {
         state: va_episode + " E" + va_ep1,
         largeImageKey: 'va',
         smallImageKey: 'logo',
-        instance: false
+        instance: false,
+        buttons: [
+          {
+            "label": "Regarder l'épisode",
+            "url": mainWindow.webContents.getURL()
+          },
+          {
+              "label": "Télécharger l'app",
+              "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+          }
+          
+      ]
       });
     }
 
@@ -106,7 +167,14 @@ module.exports = function discord(mainWindow) {
       state: "Page d'acceuil",
       largeImageKey: 'vost',
       smallImageKey: 'logo',
-      instance: false
+      instance: false,
+      buttons: [
+        {
+            "label": "Télécharger l'app",
+            "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+        }
+        
+    ]
     });
   }
   if (title.match("DDL")) {
@@ -115,7 +183,18 @@ module.exports = function discord(mainWindow) {
       state: vf_episode,
       largeImageKey: 'vost',
       smallImageKey: 'logo',
-      instance: false
+      instance: false,
+      buttons: [
+        {
+          "label": "Regarder l'épisode",
+          "url": mainWindow.webContents.getURL()
+        },
+        {
+            "label": "Télécharger l'app",
+            "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+        }
+        
+    ]
     });
   }
 
@@ -127,7 +206,14 @@ if (title.match("Toonanime - Animes VF et Vostfr en streaming gratuit")) {
     state: "Page d'acceuil",
     largeImageKey: 'ta',
     smallImageKey: 'logo',
-    instance: false
+    instance: false,
+    buttons: [
+      {
+          "label": "Télécharger l'app",
+          "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+      }
+      
+  ]
   });
 }
 if (title.match("»")) {
@@ -136,7 +222,18 @@ if (title.match("»")) {
     state: ta_episode,
     largeImageKey: 'ta',
     smallImageKey: 'logo',
-    instance: false
+    instance: false,
+    buttons: [
+      {
+        "label": "Regarder l'épisode",
+        "url": mainWindow.webContents.getURL()
+      },
+      {
+          "label": "Télécharger l'app",
+          "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+      }
+      
+  ]
   });
 }
 
@@ -147,7 +244,32 @@ if (title.match("AniList")) {
     state: "᲼᲼᲼᲼᲼᲼᲼᲼",
     largeImageKey: 'al',
     smallImageKey: 'logo',
-    instance: false
+    instance: false,
+    buttons: [
+      {
+          "label": "Télécharger l'app",
+          "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+      }
+  ]
   });
-}
+  }
+  if (title.match("'s")) {
+    discordClient.updatePresence({
+      details: title,
+      state: "᲼᲼᲼᲼᲼᲼᲼᲼",
+      largeImageKey: 'al',
+      smallImageKey: 'logo',
+      instance: false,
+      buttons: [
+        {
+          "label": "Voir le profile",
+          "url": mainWindow.webContents.getURL()
+        },
+        {
+            "label": "Télécharger l'app",
+            "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+        }
+    ]
+    });
+  }
 };

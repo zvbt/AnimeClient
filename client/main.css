@@ -1,8 +1,33 @@
-body{
-    margin: auto;
-    background-color: #171717;
-  }
+*{
+  font-family: 'Roboto', sans-serif;
+}
 
+html, body {
+  overflow: hidden;
+  background-color: #000;
+}
+
+body {
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  filter:  blur(10px);
+}
+
+  canvas {
+    width: 100%;
+    height: 100%;
+}
   
   .text {
       position: absolute;
@@ -12,68 +37,12 @@ body{
       color: #fff;
       max-width: 90%;
       padding: 2em 3em;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, .7);
+      border-radius: 10px;
       text-shadow: 0px 0px 2px #131415;
       font-family: 'Roboto', sans-serif;
   }
-  
-  h1 {
-      font-size: 2.25em;
-      font-weight: 700;
-      letter-spacing: -1px;
-  }
-  
-  a,
-  a:visited {
-      color: #e34234;
-      transition: 0.25s;
-  }
-  
-  a:hover,
-  a:focus {
-      color: #ba160c;
-  }
-  
-  .rainbow {
-    animation: rainbow 5s infinite;
-  
-  }
-  
-  @keyframes rainbow{
-    0%{color: orange;}
-    10%{color: purple;}
-      20%{color: red;}
-    30%{color: CadetBlue;}
-      40%{color: yellow;}
-    50%{color: coral;}
-      60%{color: green;}
-    70%{color: cyan;}
-    80%{color: DeepPink;}
-    90%{color: DodgerBlue;}
-      100%{color: orange;}
-  }
-  
-  .rainbow2 {
-    animation: rainbow2 5s infinite;
-  
-  }
-  
-  @keyframes rainbow2{
-    0%{color: orange;}
-    10%{color: purple;}
-      20%{color: red;}
-    30%{color: CadetBlue;}
-      40%{color: yellow;}
-    50%{color: coral;}
-      60%{color: green;}
-    70%{color: cyan;}
-    80%{color: DeepPink;}
-    90%{color: DodgerBlue;}
-      100%{color: orange;}
-  }
-  
-  
-  
+
   .tooltip {
     position: relative;
     display: inline-block;
@@ -82,11 +51,11 @@ body{
   .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
-    background-color: #008BFF;
+    background-color: #fff;
     color: rgb(0, 0, 0);
     text-align: center;
     padding: 5px 0;
-    border-radius: 6px;
+    border-radius: 0px;
     top: 100%;
     left: -25%;
   
