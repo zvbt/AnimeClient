@@ -1,6 +1,6 @@
 {
   "name": "animeclient",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "index.js",
   "description": "Une application qui regroupe plusieurs platformes de streaming d'animes vostfr/vf",
   "scripts": {
