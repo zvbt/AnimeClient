@@ -13,6 +13,12 @@ body {
   width: 100%;
   height: 100%;
 }
+.bg{
+filter: blur(5px);
+width: 100%;
+height: 100%;
+background-size: cover;
+}
 
 video {
   object-fit: cover;
