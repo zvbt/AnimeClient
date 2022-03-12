@@ -3,4 +3,4 @@ Une application qui regroupe plusieurs platformes de streaming d'animes vostfr/v
 ![Preview](https://i.imgur.com/xZmvCGu.png)
 
 
-Background image: https://zvbt.github.io/image
+Background image: https://zvbt.github.io/image (randomly generated on each refresh)
