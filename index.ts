@@ -37,13 +37,13 @@ let menu = Menu.buildFromTemplate([
         },
         accelerator: "Ctrl+Space"
       },
-      {
+    /*  {
         label: "Console",
         click: () => {
           contents.openDevTools()
         },
         accelerator: "Ctrl+Shift+I"
-      },
+      },*/
       {
         label: "Go back",
         click: () => {
