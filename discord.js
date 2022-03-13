@@ -27,7 +27,7 @@ module.exports = function discord(mainWindow) {
       buttons: [
         {
             "label": "Télécharger l'app",
-            "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+            "url": "https://zvbt.github.io/"
         }
         
     ]
@@ -47,7 +47,7 @@ module.exports = function discord(mainWindow) {
         buttons: [
           {
               "label": "Télécharger l'app",
-              "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+              "url": "https://zvbt.github.io/"
           }
           
       ]
@@ -67,7 +67,7 @@ module.exports = function discord(mainWindow) {
           },
           {
               "label": "Télécharger l'app",
-              "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+              "url": "https://zvbt.github.io/"
           }
           
       ]
@@ -87,7 +87,7 @@ module.exports = function discord(mainWindow) {
       buttons: [
         {
             "label": "Télécharger l'app",
-            "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+            "url": "https://zvbt.github.io/"
         }
         
     ]
@@ -107,7 +107,7 @@ module.exports = function discord(mainWindow) {
         },
         {
             "label": "Télécharger l'app",
-            "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+            "url": "https://zvbt.github.io/"
         }
         
     ]
@@ -130,7 +130,7 @@ module.exports = function discord(mainWindow) {
         buttons: [
           {
               "label": "Télécharger l'app",
-              "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+              "url": "https://zvbt.github.io/"
           }
           
       ]
@@ -151,7 +151,7 @@ module.exports = function discord(mainWindow) {
           },
           {
               "label": "Télécharger l'app",
-              "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+              "url": "https://zvbt.github.io/"
           }
           
       ]
@@ -171,7 +171,7 @@ module.exports = function discord(mainWindow) {
       buttons: [
         {
             "label": "Télécharger l'app",
-            "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+            "url": "https://zvbt.github.io/"
         }
         
     ]
@@ -191,7 +191,7 @@ module.exports = function discord(mainWindow) {
         },
         {
             "label": "Télécharger l'app",
-            "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+            "url": "https://zvbt.github.io/"
         }
         
     ]
@@ -210,7 +210,7 @@ if (title.match("Toonanime - Animes VF et Vostfr en streaming gratuit")) {
     buttons: [
       {
           "label": "Télécharger l'app",
-          "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+          "url": "https://zvbt.github.io/"
       }
       
   ]
@@ -230,7 +230,7 @@ if (title.match("»")) {
       },
       {
           "label": "Télécharger l'app",
-          "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+          "url": "https://zvbt.github.io/"
       }
       
   ]
@@ -248,12 +248,12 @@ if (title.match("AniList")) {
     buttons: [
       {
           "label": "Télécharger l'app",
-          "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+          "url": "https://zvbt.github.io/"
       }
   ]
   });
   }
-  if (title.match("'s")) {
+  if (title.match("'s") && title.match("AniList")) {
     discordClient.updatePresence({
       details: title,
       state: "᲼᲼᲼᲼᲼᲼᲼᲼",
@@ -267,7 +267,7 @@ if (title.match("AniList")) {
         },
         {
             "label": "Télécharger l'app",
-            "url": "https://github.com/zvbt/AnimeClient/releases/latest"
+            "url": "https://zvbt.github.io/"
         }
     ]
     });
