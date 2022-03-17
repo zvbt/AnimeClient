@@ -2,9 +2,13 @@ import { app, BrowserWindow, Menu, session} from 'electron';
 import fetch from 'cross-fetch';
 import { readFileSync, writeFileSync } from 'fs';
 import { ElectronBlocker, fullLists, Request } from '@cliqz/adblocker-electron';
+import { ALL } from 'dns';
 const InfiniteLoop = require('infinite-loop');
 const discord = require('./discord')
+const darkmode = require('./darkmode/darkmode')
 let mainWindow: BrowserWindow | null = null
+
+
 
 async function createWindow() {
   mainWindow = new BrowserWindow({
@@ -37,13 +41,6 @@ let menu = Menu.buildFromTemplate([
         },
         accelerator: "Ctrl+Space"
       },
-    /*  {
-        label: "Console",
-        click: () => {
-          contents.openDevTools()
-        },
-        accelerator: "Ctrl+Shift+I"
-      },*/
       {
         label: "Go back",
         click: () => {
@@ -86,7 +83,7 @@ let menu = Menu.buildFromTemplate([
   },
 ])
   Menu.setApplicationMenu(menu) 
-  
+
   const blocker = await ElectronBlocker.fromLists(
     fetch,
     fullLists,
@@ -105,8 +102,8 @@ let menu = Menu.buildFromTemplate([
 
   blocker.on('request-blocked', (request: Request) => {
     console.log('blocked 1', request.tabId, request.url);
+    darkmode(mainWindow);
   });
-
   blocker.on('request-redirected', (request: Request) => {
     console.log('redirected', request.tabId, request.url);
   });
@@ -128,7 +125,7 @@ let menu = Menu.buildFromTemplate([
   });
 
   mainWindow.loadFile('./client/index.html')
-  mainWindow.setTitle('AnimeClient | v1.0.5-BETA')
+  mainWindow.setTitle('AnimeClient | v1.0.6-BETA')
   
   mainWindow.on('closed', () => {
     mainWindow = null;
@@ -165,3 +162,4 @@ function discordrpc() {
 il.add(discordrpc, []);
 il.setInterval(2000)
 il.run();
+
