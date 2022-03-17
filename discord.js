@@ -20,7 +20,7 @@ module.exports = function discord(mainWindow) {
   if (title.match("AnimeClient")) {
     discordClient.updatePresence({
       details: "Page d'acceuil",
-      state: "v1.0.6-BETA",
+      state: "v1.0.8-BETA",
       largeImageKey: 'logo',
       smallImageKey: 'none',
       instance: false,
@@ -197,45 +197,6 @@ module.exports = function discord(mainWindow) {
     ]
     });
   }
-
-//toonanime
-const ta_episode = title.split(' Streaming ').shift();
-if (title.match("Toonanime - Animes VF et Vostfr en streaming gratuit")) {
-  discordClient.updatePresence({
-    details: "ToonAnime",
-    state: "Page d'acceuil",
-    largeImageKey: 'ta',
-    smallImageKey: 'logo',
-    instance: false,
-    buttons: [
-      {
-          "label": "Télécharger l'app",
-          "url": "https://zvbt.github.io/"
-      }
-      
-  ]
-  });
-}
-if (title.match("»")) {
-  discordClient.updatePresence({
-    details: "ToonAnime",
-    state: ta_episode,
-    largeImageKey: 'ta',
-    smallImageKey: 'logo',
-    instance: false,
-    buttons: [
-      {
-        "label": "Regarder l'épisode",
-        "url": mainWindow.webContents.getURL()
-      },
-      {
-          "label": "Télécharger l'app",
-          "url": "https://zvbt.github.io/"
-      }
-      
-  ]
-  });
-}
 
 //anilist
 if (title.match("AniList")) {
