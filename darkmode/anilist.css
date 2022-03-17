@@ -63,7 +63,7 @@
     }
     .nav .wrap .links {
         grid-column-start: 3;
-        margin-left: -25px;
+        margin-left: 25px;
     }
 
     .nav .wrap .search {
@@ -124,8 +124,8 @@
         #app #nav {
             margin-top: 8px;
             max-width: 1320px;
-            left: 50%;
-            transform: translate(-50%, 0);
+            margin-left: 50% !important;
+            transform: translate(-50%, 0%);
             border-radius: 16px;
         }
         .quick-search.visible {
