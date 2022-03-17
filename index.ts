@@ -5,7 +5,6 @@ import { ElectronBlocker, fullLists, Request } from '@cliqz/adblocker-electron';
 import { ALL } from 'dns';
 const InfiniteLoop = require('infinite-loop');
 const discord = require('./discord')
-const darkmode = require('./darkmode/darkmode')
 let mainWindow: BrowserWindow | null = null
 
 
@@ -102,7 +101,6 @@ let menu = Menu.buildFromTemplate([
 
   blocker.on('request-blocked', (request: Request) => {
     console.log('blocked 1', request.tabId, request.url);
-    darkmode(mainWindow);
   });
   blocker.on('request-redirected', (request: Request) => {
     console.log('redirected', request.tabId, request.url);
@@ -125,7 +123,7 @@ let menu = Menu.buildFromTemplate([
   });
 
   mainWindow.loadFile('./client/index.html')
-  mainWindow.setTitle('AnimeClient | v1.0.6-BETA')
+  mainWindow.setTitle('AnimeClient | v1.0.8-BETA')
   
   mainWindow.on('closed', () => {
     mainWindow = null;
