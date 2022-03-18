@@ -2,7 +2,6 @@ import { app, BrowserWindow, Menu, session} from 'electron';
 import fetch from 'cross-fetch';
 import { readFileSync, writeFileSync } from 'fs';
 import { ElectronBlocker, fullLists, Request } from '@cliqz/adblocker-electron';
-import { ALL } from 'dns';
 const InfiniteLoop = require('infinite-loop');
 const discord = require('./discord')
 let mainWindow: BrowserWindow | null = null
