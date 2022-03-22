@@ -14,13 +14,13 @@ discordClient.on("connected", () => {
 });
 
 module.exports = function discord(mainWindow) {
-
-  let title = mainWindow.getTitle()
+  mainWindow.webContents.on('dom-ready', () => {
+    let title = mainWindow.getTitle()
 
   if (title.match("AnimeClient")) {
     discordClient.updatePresence({
       details: "Page d'acceuil",
-      state: "v1.0.9-BETA",
+      state: "v1.1.0",
       largeImageKey: 'logo',
       smallImageKey: 'none',
       instance: false,
@@ -157,6 +157,7 @@ module.exports = function discord(mainWindow) {
       ]
       });
     }
+ 
 
   //vostfree
   const vf_episode = title.split(' en DDL').shift();
@@ -202,7 +203,7 @@ module.exports = function discord(mainWindow) {
 if (title.match("AniList")) {
   discordClient.updatePresence({
     details: title,
-    state: "᲼᲼᲼᲼᲼᲼᲼᲼",
+    state: "Share Anime & Manga",
     largeImageKey: 'al',
     smallImageKey: 'logo',
     instance: false,
@@ -213,24 +214,6 @@ if (title.match("AniList")) {
       }
   ]
   });
-  }
-  if (title.match("'s") && title.match("AniList")) {
-    discordClient.updatePresence({
-      details: title,
-      state: "᲼᲼᲼᲼᲼᲼᲼᲼",
-      largeImageKey: 'al',
-      smallImageKey: 'logo',
-      instance: false,
-      buttons: [
-        {
-          "label": "Voir le profile",
-          "url": mainWindow.webContents.getURL()
-        },
-        {
-            "label": "Télécharger l'app",
-            "url": "https://zvbt.github.io/"
-        }
-    ]
-    });
-  }
+  } 
+  })
 };

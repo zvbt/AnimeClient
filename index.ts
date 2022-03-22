@@ -2,7 +2,6 @@ import { app, BrowserWindow, Menu, session} from 'electron';
 import fetch from 'cross-fetch';
 import { readFileSync, writeFileSync } from 'fs';
 import { ElectronBlocker, fullLists, Request } from '@cliqz/adblocker-electron';
-const InfiniteLoop = require('infinite-loop');
 const discord = require('./discord')
 let mainWindow: BrowserWindow | null = null
 
@@ -122,7 +121,7 @@ let menu = Menu.buildFromTemplate([
   });
 
   mainWindow.loadFile('./client/index.html')
-  mainWindow.setTitle('AnimeClient | v1.0.9-BETA')
+  mainWindow.setTitle('AnimeClient | v1.1.0')
   
   mainWindow.on('closed', () => {
     mainWindow = null;
@@ -147,16 +146,3 @@ app.on('activate', () => {
     createWindow();
   }
 });
-
-
-let il = new InfiniteLoop;
-function discordrpc() {
-  discord(mainWindow);
-  console.log("Discord RPC updated")
-}
-
-//idk how to make it in other way 
-il.add(discordrpc, []);
-il.setInterval(2000)
-il.run();
-
