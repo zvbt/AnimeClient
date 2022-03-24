@@ -6,16 +6,27 @@
         <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
         <link rel="icon" sizes="128x128" href="../build/logo.png" />
         <script type="text/javascript" src="image.js"></script>
-        <title>AnimeClient | v1.1.0</title>
+        <title>AnimeClient | v1.1.1</title>
     </head>
     <body>
-        <script type="text/javascript">
+
+        <header id="nav-wrapper">
+            <nav id="nav">
+              <div class="nav left">
+                <span class="gradient skew"><h1 class="logo un-skew"><a href="#home">AnimeClient | v1.1.1</a></h1></span>
+                <button id="menu" class="btn-nav"><span class="fas fa-bars"></span></button>
+              </div>
+              <div class="nav right">
+                <a href="#" onclick="app.window.quit()" class="nav-link"><span class="nav-link-span"><span class="u-nav">&#10006;</span></span></a>
+              </div>
+            </nav>
+          </header>
+
+         <script type="text/javascript">
             getRandomImage();
         </script>
-        
-        <div class="center-box">
 
-            
+        <div class="center-box">
             <div class="site">
                 <a href="https://www.crunchyroll.com/">
                     <img src="./img/crunchyroll.png" style="width: 80px; height: 80px;" />

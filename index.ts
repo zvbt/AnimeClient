@@ -1,24 +1,29 @@
-import { app, BrowserWindow, Menu, session} from 'electron';
+import electron, { app, BrowserWindow, ipcMain, Menu} from 'electron';
 import fetch from 'cross-fetch';
 import { readFileSync, writeFileSync } from 'fs';
 import { ElectronBlocker, fullLists, Request } from '@cliqz/adblocker-electron';
+import path from 'path';
 const discord = require('./discord')
 let mainWindow: BrowserWindow | null = null
-
-
 
 async function createWindow() {
   mainWindow = new BrowserWindow({
     webPreferences: {
       nodeIntegration: false,
-      contextIsolation: false,
+      contextIsolation: true,
       nodeIntegrationInSubFrames: true,
+      preload: path.join(__dirname + "/backend/preload.js")
       },
     autoHideMenuBar: true,
-    frame: true,
+    frame: false,
     fullscreen: false,
     width: 1280,
     height: 720,
+    minHeight: 720,
+    minWidth: 1280,
+    maxHeight: 720,
+    maxWidth: 1280,
+    resizable: true, //windows 11 round border
   });
 
   mainWindow.webContents.on('new-window', (event, url) => {
@@ -37,6 +42,13 @@ let menu = Menu.buildFromTemplate([
           contents.loadFile('./client/index.html')
         },
         accelerator: "Ctrl+Space"
+      },
+      {
+        label: "conosole",
+        click: () => {
+          contents.openDevTools()
+        },
+        accelerator: "Ctrl+shift+I"
       },
       {
         label: "Go back",
@@ -121,7 +133,7 @@ let menu = Menu.buildFromTemplate([
   });
 
   mainWindow.loadFile('./client/index.html')
-  mainWindow.setTitle('AnimeClient | v1.1.0')
+  mainWindow.setTitle('AnimeClient | v1.1.1')
   
   mainWindow.on('closed', () => {
     mainWindow = null;
@@ -129,6 +141,9 @@ let menu = Menu.buildFromTemplate([
     
   mainWindow.setIcon('./build/logo.ico');
 }
+
+
+
 
 app.on('ready', () => {
   createWindow();
@@ -146,3 +161,8 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+
+ipcMain.on('app/close', () => {
+  app.quit()
+})
