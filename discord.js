@@ -1,7 +1,3 @@
-/*
-Can be done better but im lazy
-*/
-
 'use strict'
 const discordClient = require('discord-rich-presence')('947072787565133864'); 
 
@@ -20,8 +16,9 @@ module.exports = function discord(mainWindow) {
   if (title.match("AnimeClient")) {
     discordClient.updatePresence({
       details: "Page d'acceuil",
-      state: "v1.1.0",
+      state: "v1.1.1",
       largeImageKey: 'logo',
+      largeImageText: 'AnimeClient v1.1.1',
       smallImageKey: 'none',
       instance: false,
       buttons: [
@@ -42,6 +39,7 @@ module.exports = function discord(mainWindow) {
         details: "Crunchyroll",
         state: "Page d'acceuil",
         largeImageKey: 'crunchy',
+        largeImageText: 'Crunchyroll',
         smallImageKey: 'logo',
         instance: false,
         buttons: [
@@ -58,6 +56,7 @@ module.exports = function discord(mainWindow) {
         details: "Crunchyroll",
         state: cr_episode,
         largeImageKey: 'crunchy',
+        largeImageText: 'Crunchyroll',
         smallImageKey: 'logo',
         instance: false,
         buttons: [
@@ -82,6 +81,7 @@ module.exports = function discord(mainWindow) {
       details: "Neko-sama",
       state: "Page d'acceuil",
       largeImageKey: 'nekosama',
+      largeImageText: 'Neko-sama',
       smallImageKey: 'logo',
       instance: false,
       buttons: [
@@ -98,6 +98,7 @@ module.exports = function discord(mainWindow) {
       details: neko_site,
       state: neko_episode,
       largeImageKey: 'nekosama',
+      largeImageText: 'Neko-sama',
       smallImageKey: 'logo',
       instance: false,
       buttons: [
@@ -125,6 +126,7 @@ module.exports = function discord(mainWindow) {
         details: "Voiranime",
         state: "Page d'acceuil",
         largeImageKey: 'va',
+        largeImageText: 'Voiranime',
         smallImageKey: 'logo',
         instance: false,
         buttons: [
@@ -142,6 +144,7 @@ module.exports = function discord(mainWindow) {
         details: va_site,
         state: va_episode + " E" + va_ep1,
         largeImageKey: 'va',
+        largeImageText: 'Voiranime',
         smallImageKey: 'logo',
         instance: false,
         buttons: [
@@ -167,6 +170,7 @@ module.exports = function discord(mainWindow) {
       details: "Vostfree",
       state: "Page d'acceuil",
       largeImageKey: 'vost',
+      largeImageText: 'Vostfree',
       smallImageKey: 'logo',
       instance: false,
       buttons: [
@@ -183,6 +187,7 @@ module.exports = function discord(mainWindow) {
       details: "VostFree",
       state: vf_episode,
       largeImageKey: 'vost',
+      largeImageText: 'Vostfree',
       smallImageKey: 'logo',
       instance: false,
       buttons: [
@@ -205,6 +210,7 @@ if (title.match("AniList")) {
     details: title,
     state: "Share Anime & Manga",
     largeImageKey: 'al',
+    largeImageText: 'AniList',
     smallImageKey: 'logo',
     instance: false,
     buttons: [
