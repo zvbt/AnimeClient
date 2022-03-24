@@ -11,18 +11,15 @@ async function createWindow() {
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
-      nodeIntegrationInSubFrames: true,
-      preload: path.join(__dirname + "/backend/preload.js")
+      nodeIntegrationInSubFrames: true
       },
     autoHideMenuBar: true,
-    frame: false,
+    frame: true,
     fullscreen: false,
     width: 1280,
     height: 720,
     minHeight: 720,
     minWidth: 1280,
-    maxHeight: 720,
-    maxWidth: 1280,
     resizable: true, //windows 11 round border
   });
 
@@ -133,7 +130,7 @@ let menu = Menu.buildFromTemplate([
   });
 
   mainWindow.loadFile('./client/index.html')
-  mainWindow.setTitle('AnimeClient | v1.1.1')
+  mainWindow.setTitle('AnimeClient | v1.1.2')
   
   mainWindow.on('closed', () => {
     mainWindow = null;
@@ -141,8 +138,6 @@ let menu = Menu.buildFromTemplate([
     
   mainWindow.setIcon('./build/logo.ico');
 }
-
-
 
 
 app.on('ready', () => {
@@ -161,8 +156,3 @@ app.on('activate', () => {
     createWindow();
   }
 });
-
-
-ipcMain.on('app/close', () => {
-  app.quit()
-})

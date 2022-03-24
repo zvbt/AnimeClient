@@ -16,9 +16,9 @@ module.exports = function discord(mainWindow) {
   if (title.match("AnimeClient")) {
     discordClient.updatePresence({
       details: "Page d'acceuil",
-      state: "v1.1.1",
+      state: "v1.1.2",
       largeImageKey: 'logo',
-      largeImageText: 'AnimeClient v1.1.1',
+      largeImageText: 'AnimeClient v1.1.2',
       smallImageKey: 'none',
       instance: false,
       buttons: [
@@ -26,7 +26,6 @@ module.exports = function discord(mainWindow) {
             "label": "Télécharger l'app",
             "url": "https://zvbt.github.io/"
         }
-        
     ]
     });
   }
@@ -47,7 +46,6 @@ module.exports = function discord(mainWindow) {
               "label": "Télécharger l'app",
               "url": "https://zvbt.github.io/"
           }
-          
       ]
       });
     }
@@ -68,7 +66,6 @@ module.exports = function discord(mainWindow) {
               "label": "Télécharger l'app",
               "url": "https://zvbt.github.io/"
           }
-          
       ]
       });
     }
@@ -88,8 +85,7 @@ module.exports = function discord(mainWindow) {
         {
             "label": "Télécharger l'app",
             "url": "https://zvbt.github.io/"
-        }
-        
+        } 
     ]
     });
   }
@@ -109,8 +105,7 @@ module.exports = function discord(mainWindow) {
         {
             "label": "Télécharger l'app",
             "url": "https://zvbt.github.io/"
-        }
-        
+        } 
     ]
     });
   }
@@ -133,8 +128,7 @@ module.exports = function discord(mainWindow) {
           {
               "label": "Télécharger l'app",
               "url": "https://zvbt.github.io/"
-          }
-          
+          } 
       ]
       });
   }
@@ -156,7 +150,6 @@ module.exports = function discord(mainWindow) {
               "label": "Télécharger l'app",
               "url": "https://zvbt.github.io/"
           }
-          
       ]
       });
     }
@@ -178,7 +171,6 @@ module.exports = function discord(mainWindow) {
             "label": "Télécharger l'app",
             "url": "https://zvbt.github.io/"
         }
-        
     ]
     });
   }
@@ -199,7 +191,6 @@ module.exports = function discord(mainWindow) {
             "label": "Télécharger l'app",
             "url": "https://zvbt.github.io/"
         }
-        
     ]
     });
   }
