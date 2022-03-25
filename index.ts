@@ -130,7 +130,7 @@ let menu = Menu.buildFromTemplate([
   });
 
   mainWindow.loadFile('./client/index.html')
-  mainWindow.setTitle('AnimeClient | v1.1.2')
+  mainWindow.setTitle('AnimeClient | v1.1.3')
   
   mainWindow.on('closed', () => {
     mainWindow = null;

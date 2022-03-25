@@ -18,7 +18,7 @@ module.exports = function discord(mainWindow) {
       details: "Page d'acceuil",
       state: "v1.1.2",
       largeImageKey: 'logo',
-      largeImageText: 'AnimeClient v1.1.2',
+      largeImageText: 'AnimeClient v1.1.3',
       smallImageKey: 'none',
       instance: false,
       buttons: [
