@@ -156,3 +156,15 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+
+const InfiniteLoop = require('infinite-loop');
+let il = new InfiniteLoop;
+function discordrpc() {
+  discord(mainWindow);
+}
+
+//idk how to make it in other way 
+il.add(discordrpc, []);
+il.setInterval(2000)
+il.run();

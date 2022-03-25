@@ -10,7 +10,7 @@ discordClient.on("connected", () => {
 });
 
 module.exports = function discord(mainWindow) {
-  mainWindow.webContents.on('dom-ready', () => {
+
     let title = mainWindow.getTitle()
 
   if (title.match("AnimeClient")) {
@@ -33,7 +33,7 @@ module.exports = function discord(mainWindow) {
     //crunchy
     const cr_site = title.split(' - ').pop();
     const cr_episode = title.split(' - ').shift();
-    if (title.match("Crunchyroll")) {
+    if (title.match("VOSTFR")) {
       discordClient.updatePresence({
         details: "Crunchyroll",
         state: "Page d'acceuil",
@@ -199,9 +199,8 @@ module.exports = function discord(mainWindow) {
 if (title.match("AniList")) {
   discordClient.updatePresence({
     details: title,
-    state: "Share Anime & Manga",
+    state: "    ",
     largeImageKey: 'al',
-    largeImageText: 'AniList',
     smallImageKey: 'logo',
     instance: false,
     buttons: [
@@ -211,6 +210,24 @@ if (title.match("AniList")) {
       }
   ]
   });
-  } 
-  })
+  }
+  if (title.match("'s ")) {
+    discordClient.updatePresence({
+      details: title,
+      state: "    ",
+      largeImageKey: 'al',
+      smallImageKey: 'logo',
+      instance: false,
+      buttons: [
+        {
+          "label": "Voir le profile",
+          "url": mainWindow.webContents.getURL()
+        },
+        {
+            "label": "Télécharger l'app",
+            "url": "https://zvbt.github.io/"
+        }
+    ]
+    });
+  }
 };
