@@ -33,7 +33,7 @@ module.exports = function discord(mainWindow) {
     //crunchy
     const cr_site = title.split(' - ').pop();
     const cr_episode = title.split(' - ').shift();
-    if (title === "Crunchyroll - Watch Popular Anime & Read Manga Online") {
+    if (title.match("Crunchyroll")) {
       discordClient.updatePresence({
         details: "Crunchyroll",
         state: "Page d'acceuil",
@@ -49,7 +49,7 @@ module.exports = function discord(mainWindow) {
       ]
       });
     }
-    if (title.match("Watch on Crunchyroll")) {
+    if (title.match("Regardez")) {
       discordClient.updatePresence({
         details: "Crunchyroll",
         state: cr_episode,
