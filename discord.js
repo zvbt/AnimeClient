@@ -10,7 +10,7 @@ discordClient.on("connected", () => {
 });
 
 module.exports = function discord(mainWindow) {
-  mainWindow.webContents.on('dom-ready', () => {
+  
     let title = mainWindow.getTitle()
 
     if (title.match("AnimeClient")) {
@@ -33,7 +33,7 @@ module.exports = function discord(mainWindow) {
       //crunchy
       const cr_site = title.split(' - ').pop();
       const cr_episode = title.split(' - ').shift();
-      if (title.match("Crunchyroll")) {
+      if (title.match("Crunchyroll") && title.match("Anime en streaming") || title.match("Crunchyroll") && title.match("en direct du Japon")) {
         discordClient.updatePresence({
           details: "Crunchyroll",
           state: "Page d'acceuil",
@@ -116,7 +116,7 @@ module.exports = function discord(mainWindow) {
       const va_ep1 = va_ep.split('- ').pop();
       const va_episode = va_ep.split('- ').shift();
   
-      if (title.match("Voiranime")) {
+      if (title.match("Voiranime") && title.match("EN FRANCE")) {
         discordClient.updatePresence({
           details: "Voiranime",
           state: "Page d'acceuil",
@@ -196,7 +196,7 @@ module.exports = function discord(mainWindow) {
     }
   
   //anilist
-  if (title.match("AniList")) {
+  if (title.match("AniList") && title.match("Home")) {
     discordClient.updatePresence({
       details: title,
       state: "    ",
@@ -230,6 +230,6 @@ module.exports = function discord(mainWindow) {
       ]
       });
     }
-})
+
     
 };
