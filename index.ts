@@ -3,6 +3,8 @@ import fetch from 'cross-fetch';
 import { readFileSync, writeFileSync } from 'fs';
 import { ElectronBlocker, fullLists, Request } from '@cliqz/adblocker-electron';
 import path from 'path';
+
+const { getWindowSettings, saveBounds} = require('./settings')
 const discord = require('./discord')
 let mainWindow: BrowserWindow | null = null
 
@@ -28,6 +30,7 @@ async function createWindow() {
     console.log("popup blocked")
   })
   const contents = mainWindow.webContents;
+  const url = getWindowSettings();
   
 let menu = Menu.buildFromTemplate([
   {
@@ -36,16 +39,10 @@ let menu = Menu.buildFromTemplate([
       {
         label: "Acceuil",
         click: () => {
-          contents.loadFile('./client/index.html')
+          //contents.loadFile('./client/index.html')
+          contents.loadURL('https://silvercube.fr/animeclient/client/index.html')
         },
         accelerator: "Ctrl+Space"
-      },
-      {
-        label: "conosole",
-        click: () => {
-          contents.openDevTools()
-        },
-        accelerator: "Ctrl+shift+I"
       },
       {
         label: "Go back",
@@ -129,9 +126,14 @@ let menu = Menu.buildFromTemplate([
     console.log('style', style.length, url);
   });
 
-  mainWindow.loadFile('./client/index.html')
-  mainWindow.setTitle('AnimeClient | v1.1.4')
-  
+
+
+  mainWindow.loadURL(url)
+  mainWindow.setTitle('AnimeClient | v1.1.5')
+
+  contents.on("dom-ready", () => saveBounds(contents.getURL()));
+
+
   mainWindow.on('closed', () => {
     mainWindow = null;
   });

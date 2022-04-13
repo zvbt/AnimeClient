@@ -16,9 +16,9 @@ module.exports = function discord(mainWindow) {
     if (title.match("AnimeClient")) {
       discordClient.updatePresence({
         details: "Page d'acceuil",
-        state: "v1.1.4",
+        state: "v1.1.5",
         largeImageKey: 'logo',
-        largeImageText: 'AnimeClient v1.1.4',
+        largeImageText: 'AnimeClient v1.1.5',
         smallImageKey: 'none',
         instance: false,
         buttons: [
