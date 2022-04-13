@@ -2,3 +2,4 @@ node_modules
 engine.bin
 dist
 list.txt
+client
