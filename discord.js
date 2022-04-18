@@ -115,6 +115,31 @@ module.exports = function discord(mainWindow) {
       const va_ep = title.split(' VOSTFR ').shift();
       const va_ep1 = va_ep.split('- ').pop();
       const va_episode = va_ep.split('- ').shift();
+      const pageanime1 = title.split('gratuitement ').pop();
+      const pageanime = pageanime1.split(' en HD').shift()
+  
+  
+  
+      if (pageanime1.match(" en HD- ")) {
+        discordClient.updatePresence({
+          details: "Regarde la page de l'anime:",
+          state: pageanime,
+          largeImageKey: 'va',
+          largeImageText: 'Voiranime',
+          smallImageKey: 'logo',
+          instance: false,
+          buttons: [
+            {
+              "label": "Regarder l'anime",
+              "url": mainWindow.webContents.getURL()
+            },
+            {
+                "label": "Télécharger l'app",
+                "url": "https://zvbt.github.io/"
+            } 
+        ]
+        });
+    }
   
       if (title.match("Voiranime") && title.match("EN FRANCE")) {
         discordClient.updatePresence({
@@ -133,7 +158,7 @@ module.exports = function discord(mainWindow) {
         });
     }
   
-      if (va_site.match("Voiranime")) {
+      if (title.match(" - Voiranime")) {
         discordClient.updatePresence({
           details: va_site,
           state: va_episode + " E" + va_ep1,
