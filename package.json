@@ -1,14 +1,13 @@
 {
   "name": "animeclient",
   "productname": "animeclient",
-  "version": "1.1.5",
+  "version": "1.1.8",
   "main": "index.js",
   "repository": "https://github.com/zvbt/animeclient",
   "description": "Une application qui regroupe plusieurs platformes de streaming d'animes vostfr/vf",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . AnimeClient --overwrite --win32 --icon=./build/logo.png --out=dist --prune=false --asar",
-    "win": "electron-packager . AnimeClient --overwrite --platform=win32 --arch=ia32 --icon=./build/logo.png --out=dist --prune=false --asar",
+    "build": "electron-packager . AnimeClient --overwrite --win32 --icon=./build/logo.png --out=dist --asar",
     "darwin": "electron-packager . AnimeClient --overwrite --platform=darwin --arch=x64 --icon=./build/logo.icns --out=dist --prune=false --asar",
     "linux": "electron-packager . AnimeClient --overwrite --platform=linux --arch=x64 --icon=./build/logo.png --out=dist --prune=false --asar",
     "postinstall": "node-prune",
@@ -22,10 +21,8 @@
     "discord-rich-presence": "^0.0.8",
     "electron-store": "^8.0.1",
     "infinite-loop": "^0.2.2",
-    "ts-node": "^10.7.0"
-  },
-  "devDependencies": {
-    "electron": "^17.1.2",
-    "electron-packager": "^15.4.0"
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3",
+    "electron": "^17.1.2"
   }
 }
