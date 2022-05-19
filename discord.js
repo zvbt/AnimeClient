@@ -16,9 +16,9 @@ module.exports = function discord(mainWindow) {
     if (title.match("AnimeClient")) {
       discordClient.updatePresence({
         details: "Page d'acceuil",
-        state: "v1.1.8",
+        state: "v1.1.9",
         largeImageKey: 'logo',
-        largeImageText: 'AnimeClient v1.1.8',
+        largeImageText: 'AnimeClient v1.1.9',
         smallImageKey: 'none',
         instance: false,
         buttons: [
@@ -256,5 +256,43 @@ module.exports = function discord(mainWindow) {
       });
     }
 
+  //mangadex
+
+  const scanTitle1 = title.split(' - MangaDex').shift();
+  const scanTitle2 = scanTitle1.split('- ').pop();
+  const chapter1 = scanTitle1.split(' - ').shift();
+  const chapter = chapter1.split("Chapter ").pop();
+  const page = chapter1.split(' | ').shift();
+
+  if (title === "MangaDex") {
+    discordClient.updatePresence({
+      details: "MangaDex",
+      state: "Page d'acceuil",
+      largeImageKey: 'mangadex',
+      smallImageKey: 'logo',
+      instance: false,
+      buttons: [
+        {
+            "label": "Télécharger l'app",
+            "url": "https://zvbt.github.io/"
+        }
+    ]
+    });
+  }
+  if (title.match("Chapter")) {
+    discordClient.updatePresence({
+      details: "MangaDex: en train de lire",
+      state: "Page: " + page + " Chapitre: " + chapter + " de " + scanTitle2,
+      largeImageKey: 'mangadex',
+      smallImageKey: 'logo',
+      instance: false,
+      buttons: [
+        {
+            "label": "Télécharger l'app",
+            "url": "https://zvbt.github.io/"
+        }
+    ]
+    });
+  }
     
 };
