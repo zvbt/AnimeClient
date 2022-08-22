@@ -1,6 +1,6 @@
 # AnimeClient
-Une application qui regroupe plusieurs platformes de streaming d'animes vostfr/vf
+An application that brings together several anime streaming platforms vostfr/vf sub/dub
 ![Preview](https://i.imgur.com/xZmvCGu.png)
 
 
-Background image: https://github.com/zvbt/animeclient-assets/tree/main/assets
+Background videos: https://github.com/zvbt/animeclient-assets/tree/main/videos
