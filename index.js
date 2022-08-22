@@ -112,9 +112,8 @@ let menu = Menu.buildFromTemplate([
   });
 
 
-
   mainWindow.loadURL(url)
-  mainWindow.setTitle('AnimeClient | v1.1.9')
+  mainWindow.setTitle('AnimeClient v2.0')
 
   contents.on("dom-ready", () => saveBounds(contents.getURL()));
 

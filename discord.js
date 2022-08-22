@@ -15,15 +15,15 @@ module.exports = function discord(mainWindow) {
 
     if (title.match("AnimeClient")) {
       discordClient.updatePresence({
-        details: "Page d'acceuil",
-        state: "v1.1.9",
+        details: "Home Page",
+        state: "v2.0",
         largeImageKey: 'logo',
-        largeImageText: 'AnimeClient v1.1.9',
+        largeImageText: 'AnimeClient v2.0',
         smallImageKey: 'none',
         instance: false,
         buttons: [
           {
-              "label": "Télécharger l'app",
+              "label": "Download the app",
               "url": "https://zvbt.github.io/"
           }
       ]
@@ -43,7 +43,7 @@ module.exports = function discord(mainWindow) {
           instance: false,
           buttons: [
             {
-                "label": "Télécharger l'app",
+                "label": "Download the app",
                 "url": "https://zvbt.github.io/"
             }
         ]
@@ -59,11 +59,11 @@ module.exports = function discord(mainWindow) {
           instance: false,
           buttons: [
             {
-              "label": "Regarder l'épisode",
+              "label": "Watch episode",
               "url": mainWindow.webContents.getURL()
             },
             {
-                "label": "Télécharger l'app",
+                "label": "Download the app",
                 "url": "https://zvbt.github.io/"
             }
         ]
@@ -83,7 +83,7 @@ module.exports = function discord(mainWindow) {
         instance: false,
         buttons: [
           {
-              "label": "Télécharger l'app",
+              "label": "Download the app",
               "url": "https://zvbt.github.io/"
           } 
       ]
@@ -99,11 +99,11 @@ module.exports = function discord(mainWindow) {
         instance: false,
         buttons: [
           {
-            "label": "Regarder l'épisode",
+            "label": "Watch episode",
             "url": mainWindow.webContents.getURL()
           },
           {
-              "label": "Télécharger l'app",
+              "label": "Download the app",
               "url": "https://zvbt.github.io/"
           } 
       ]
@@ -130,11 +130,11 @@ module.exports = function discord(mainWindow) {
           instance: false,
           buttons: [
             {
-              "label": "Regarder l'anime",
+              "label": "Watch anime",
               "url": mainWindow.webContents.getURL()
             },
             {
-                "label": "Télécharger l'app",
+                "label": "Download the app",
                 "url": "https://zvbt.github.io/"
             } 
         ]
@@ -151,7 +151,7 @@ module.exports = function discord(mainWindow) {
           instance: false,
           buttons: [
             {
-                "label": "Télécharger l'app",
+                "label": "Download the app",
                 "url": "https://zvbt.github.io/"
             } 
         ]
@@ -168,11 +168,11 @@ module.exports = function discord(mainWindow) {
           instance: false,
           buttons: [
             {
-              "label": "Regarder l'épisode",
+              "label": "Watch episode",
               "url": mainWindow.webContents.getURL()
             },
             {
-                "label": "Télécharger l'app",
+                "label": "Download the app",
                 "url": "https://zvbt.github.io/"
             }
         ]
@@ -193,7 +193,7 @@ module.exports = function discord(mainWindow) {
         instance: false,
         buttons: [
           {
-              "label": "Télécharger l'app",
+              "label": "Download the app",
               "url": "https://zvbt.github.io/"
           }
       ]
@@ -209,11 +209,11 @@ module.exports = function discord(mainWindow) {
         instance: false,
         buttons: [
           {
-            "label": "Regarder l'épisode",
+            "label": "Watch episode",
             "url": mainWindow.webContents.getURL()
           },
           {
-              "label": "Télécharger l'app",
+              "label": "Download the app",
               "url": "https://zvbt.github.io/"
           }
       ]
@@ -230,7 +230,7 @@ module.exports = function discord(mainWindow) {
       instance: false,
       buttons: [
         {
-            "label": "Télécharger l'app",
+            "label": "Download the app",
             "url": "https://zvbt.github.io/"
         }
     ]
@@ -245,11 +245,11 @@ module.exports = function discord(mainWindow) {
         instance: false,
         buttons: [
           {
-            "label": "Voir le profile",
+            "label": "View profile",
             "url": mainWindow.webContents.getURL()
           },
           {
-              "label": "Télécharger l'app",
+              "label": "Download the app",
               "url": "https://zvbt.github.io/"
           }
       ]
@@ -273,7 +273,7 @@ module.exports = function discord(mainWindow) {
       instance: false,
       buttons: [
         {
-            "label": "Télécharger l'app",
+            "label": "Download the app",
             "url": "https://zvbt.github.io/"
         }
     ]
@@ -288,11 +288,96 @@ module.exports = function discord(mainWindow) {
       instance: false,
       buttons: [
         {
-            "label": "Télécharger l'app",
+            "label": "Download the app",
             "url": "https://zvbt.github.io/"
         }
     ]
     });
   }
-    
+
+//aniflix
+  if (title.match("Animeflix")) {
+    discordClient.updatePresence({
+      details: "Animeflix",
+      state: "Browsing 🔍",
+      largeImageKey: 'https://www.aniflix.pro/icons/apple-touch-icon.png',
+      smallImageKey: 'logo',
+      instance: false,
+      buttons: [
+        {
+            "label": "Download the app",
+            "url": "https://zvbt.github.io/"
+        }
+    ]
+    });
+  }
+
+  const af_title = title.split(' |').shift();
+  const af_ep = title.split('| Episode').pop();
+  const url = mainWindow.webContents.getURL()
+
+
+  if (url.match("aniflix.pro/watch")) {
+    discordClient.updatePresence({
+      details: "Animeflix",
+      state: af_title + " Episode " + af_ep,
+      largeImageKey: 'https://www.aniflix.pro/icons/apple-touch-icon.png',
+      smallImageKey: 'logo',
+      instance: false,
+      buttons: [
+        {
+          "label": "Watch episode",
+          "url": mainWindow.webContents.getURL()
+        },
+        {
+            "label": "Download the app",
+            "url": "https://zvbt.github.io/"
+        }
+    ]
+    });
+  }
+
+  //gogoanime
+  if (title.match("Watch anime online, English anime online - Gogoanime")) {
+    discordClient.updatePresence({
+      details: "GoGoAnime",
+      state: "Browsing 🔍",
+      largeImageKey: 'https://s3.us-east-1.wasabisys.com/e-zimagehosting/7ed0180f-b228-49a7-be1e-0183c1938777/cxcdw55r.png',
+      smallImageKey: 'logo',
+      instance: false,
+      buttons: [
+        {
+            "label": "Download the app",
+            "url": "https://zvbt.github.io/"
+        }
+    ]
+    });
+  }
+  //Watch Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e(TV) 2nd Season Episode 8 English Subbed at Gogoanime
+  
+  const go_title = title.split('Watch ').pop();
+  const go_title2 = go_title.split(' Episode').shift();
+
+  const go_ep = title.split('Episode ').pop();
+  const go_ep2 = go_ep.split(" ").shift();
+
+  if (title.match("Watch") && title.match("Episode")) {
+    discordClient.updatePresence({
+      details: "GoGoAnime",
+      state: go_title2 + " Episode " + go_ep2,
+      largeImageKey: 'https://s3.us-east-1.wasabisys.com/e-zimagehosting/7ed0180f-b228-49a7-be1e-0183c1938777/cxcdw55r.png',
+      smallImageKey: 'logo',
+      instance: false,
+      buttons: [
+        {
+          "label": "Watch episode",
+          "url": mainWindow.webContents.getURL()
+        },
+        {
+            "label": "Download the app",
+            "url": "https://zvbt.github.io/"
+        }
+    ]
+    });
+  }
 };
