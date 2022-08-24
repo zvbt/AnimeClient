@@ -7,6 +7,6 @@
 
 An application that brings together several anime streaming platforms vostfr/vf sub/dub
 
-![Preview](https://s3.us-east-1.wasabisys.com/e-zimagehosting/7ed0180f-b228-49a7-be1e-0183c1938777/x6tlk5kz.gif)
+![Preview](https://i.imgur.com/zvAcPQ1.png)
 
 Background videos: https://github.com/zvbt/animeclient-assets/tree/main/videos
