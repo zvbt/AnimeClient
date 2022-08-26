@@ -98,18 +98,7 @@ async function createWindow() {
   ]);
   Menu.setApplicationMenu(menu);
 
-  const blocker = await ElectronBlocker.fromLists(
-    fetch,
-    fullLists,
-    {
-      enableCompression: true,
-    },
-    {
-      path: "engine.bin",
-      read: async (...args) => readFileSync(...args),
-      write: async (...args) => writeFileSync(...args),
-    }
-  );
+  const blocker = await ElectronBlocker.fromLists(fetch, fullLists);
 
   blocker.enableBlockingInSession(mainWindow.webContents.session);
   blocker.on("request-blocked", (request) => {
