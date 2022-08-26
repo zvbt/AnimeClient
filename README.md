@@ -7,6 +7,24 @@
 
 An application that brings together several anime streaming platforms vostfr/vf sub/dub
 
-![Preview](https://i.imgur.com/zvAcPQ1.png)
+<details>
+  <summary>Preview</summary>
+  <img src="https://i.imgur.com/zvAcPQ1.png"/>
+  <summary>Discord RPC</summary>
+  <img src="https://i.imgur.com/zvAcPQ1.png"/>
+</details>
+
+## Building from source
+
+It is recommended to use [Visual Studio Code](https://code.visualstudio.com)
+
+1. Clone repository with
+   `git clone https://github.com/zvbt/AnimeClient.git`
+2. Install depedencies `npm install`
+3. Start the project `npm start`
 
 Background videos: https://github.com/zvbt/animeclient-assets/tree/main/videos
+
+<br>
+
+- It can be done more professionally but I'm lazy
