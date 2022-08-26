@@ -9,9 +9,7 @@
     "start": "electron .",
     "build": "electron-packager . AnimeClient --overwrite --win32 --icon=./build/logo.png --out=dist --asar",
     "darwin": "electron-packager . AnimeClient --overwrite --platform=darwin --arch=x64 --icon=./build/logo.icns --out=dist --prune=false --asar",
-    "linux": "electron-packager . AnimeClient --overwrite --platform=linux --arch=x64 --icon=./build/logo.png --out=dist --prune=false --asar",
-    "postinstall": "node-prune",
-    "clean": "modclean"
+    "linux": "electron-packager . AnimeClient --overwrite --platform=linux --arch=x64 --icon=./build/logo.png --out=dist --prune=false --asar"
   },
   "author": "zvbt",
   "license": "MIT",
@@ -19,10 +17,13 @@
     "@cliqz/adblocker-electron": "^1.23.6",
     "cross-fetch": "^3.1.5",
     "discord-rich-presence": "^0.0.8",
+    "electron": "^17.1.2",
+    "electron-packager": "^15.5.1",
     "electron-store": "^8.0.1",
     "infinite-loop": "^0.2.2",
+    "modclean": "^3.0.0-beta.1",
+    "node-prune": "^1.0.2",
     "ts-node": "^10.7.0",
-    "typescript": "^4.6.3",
-    "electron": "^17.1.2"
+    "typescript": "^4.6.3"
   }
 }
