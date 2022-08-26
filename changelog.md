@@ -1,4 +1,0 @@
-- Reprendrenez où vous avez arrêté
-- Fix discord rich presence clignotant
-- Mise a jour automatique pour windows uniquement
-- Compatible avec mac et linux
