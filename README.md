@@ -11,8 +11,9 @@ An application that brings together several anime streaming platforms vostfr/vf 
 <details>
   <summary>Preview</summary>
   <img src="https://i.imgur.com/zvAcPQ1.png"/>
+  <summary>Discord RPC</summary>
+  <img src="https://s3.us-east-1.wasabisys.com/e-zimagehosting/7ed0180f-b228-49a7-be1e-0183c1938777/6k27w8mi.png"/>
 </details>
-<br>
 
 ## Building from source
 
@@ -22,7 +23,8 @@ It is recommended to use [Visual Studio Code](https://code.visualstudio.com)
    `git clone https://github.com/zvbt/AnimeClient.git`
 2. Install depedencies `npm install`
 3. Start the project `npm start`
-   Background videos: https://github.com/zvbt/animeclient-assets/tree/main/videos
+
+Background videos: https://github.com/zvbt/animeclient-assets/tree/main/videos
 
 <br>
 
