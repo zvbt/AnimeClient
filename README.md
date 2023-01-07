@@ -28,4 +28,4 @@ Background videos: https://github.com/zvbt/animeclient-assets/tree/main/videos
 
 <br>
 
-- It can be done more professionally but I'm lazy
+- It can be done better but i'm lazy
