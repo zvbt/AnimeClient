@@ -19,19 +19,18 @@ async function createWindow() {
       webviewTag: true,
     },
     autoHideMenuBar: true,
-    frame: true,
+    frame: false,
     fullscreen: false,
     width: 1280,
     height: 720,
     minHeight: 720,
     minWidth: 1280,
+    maxHeight: 720,
+    maxWidth: 1280,
     resizable: true, //windows 11 round border
+    roundedCorners: true,
   });
 
-  mainWindow.webContents.on("new-window", (event, url) => {
-    event.preventDefault();
-    console.log("popup blocked");
-  });
   const contents = mainWindow.webContents;
   const url = getWindowSettings();
 
@@ -42,9 +41,7 @@ async function createWindow() {
         {
           label: "Acceuil",
           click: () => {
-            contents.loadURL(
-              "https://silvercube.fr/animeclient/client/index.html"
-            );
+            contents.loadURL("http://127.0.0.1:5500/");
           },
           accelerator: "Ctrl+Space",
         },
@@ -108,7 +105,20 @@ async function createWindow() {
   mainWindow.loadURL(url);
   mainWindow.setTitle("AnimeClient v2.0");
 
+  mainWindow.webContents.setWindowOpenHandler((details) => {
+    return { action: "deny" };
+  });
+
   contents.on("dom-ready", () => saveBounds(contents.getURL()));
+
+  contents.on("will-navigate", (event, url) => {
+    contents.executeJavaScript(`
+      const style = document.createElement('style');
+      style.type = 'text/css';
+      style.innerHTML = '* { -webkit-app-region: no-drag !important; }';
+      document.head.appendChild(style);
+    `);
+  });
 
   mainWindow.on("closed", () => {
     mainWindow = null;
