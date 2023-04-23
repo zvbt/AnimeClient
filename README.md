@@ -10,7 +10,7 @@ An application that brings together several anime streaming platforms
 
 <details>
   <summary>Preview</summary>
-  <img src="https://i.imgur.com/zvAcPQ1.png"/>
+  No preview atm, im rebuilding the UI
 </details>
 
 ## Building from source
@@ -22,7 +22,7 @@ It is recommended to use [Visual Studio Code](https://code.visualstudio.com)
 2. Install depedencies `npm install`
 3. Start the project `npm start`
 
-Background videos: https://github.com/zvbt/animeclient-assets/tree/main/videos
+Background videos [here](https://github.com/zvbt/aclient-main-page/tree/main/assets/videos)
 
 <br>
 
