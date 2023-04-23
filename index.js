@@ -1,12 +1,12 @@
 const { electron, app, BrowserWindow, ipcMain, Menu } = require("electron");
 const { fetch } = require("cross-fetch");
+const path = require("path");
 const { readFileSync, writeFileSync } = require("fs");
 const {
   ElectronBlocker,
   fullLists,
   Request,
 } = require("@cliqz/adblocker-electron");
-const { path } = require("path");
 const { getWindowSettings, saveBounds } = require("./settings");
 const discord = require("./discord");
 
@@ -25,9 +25,7 @@ async function createWindow() {
     height: 720,
     minHeight: 720,
     minWidth: 1280,
-    maxHeight: 720,
-    maxWidth: 1280,
-    resizable: true, //windows 11 round border
+    resizable: false,
     roundedCorners: true,
   });
 
@@ -111,12 +109,28 @@ async function createWindow() {
 
   contents.on("dom-ready", () => saveBounds(contents.getURL()));
 
-  contents.on("will-navigate", (event, url) => {
-    contents.executeJavaScript(`
+  contents.on("dom-ready", (event, url) => {
+    let title = mainWindow.getTitle();
+
+    if (title.match("AnimeClient")) {
+      console.log("ac");
+    } else {
+      contents.executeJavaScript(`
       const style = document.createElement('style');
       style.type = 'text/css';
       style.innerHTML = '* { -webkit-app-region: no-drag !important; }';
       document.head.appendChild(style);
+    `);
+    }
+  });
+
+  //javascript injection
+  contents.on("dom-ready", () => {
+    contents.executeJavaScript(`
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://ac.akali.best/inject.js';
+      document.head.appendChild(script);
     `);
   });
 
