@@ -6,13 +6,11 @@
 	<a href="https://github.com/zvbt/AnimeClient/releases"><img src="https://img.shields.io/github/downloads/zvbt/AnimeClient/total.svg?style=for-the-badge"></a>
 </p>
 
-An application that brings together several anime streaming platforms vostfr/vf sub/dub
+An application that brings together several anime streaming platforms
 
 <details>
   <summary>Preview</summary>
   <img src="https://i.imgur.com/zvAcPQ1.png"/>
-  <summary>Discord RPC</summary>
-  <img src="https://s3.us-east-1.wasabisys.com/e-zimagehosting/7ed0180f-b228-49a7-be1e-0183c1938777/6k27w8mi.png"/>
 </details>
 
 ## Building from source
