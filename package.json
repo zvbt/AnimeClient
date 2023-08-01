@@ -17,7 +17,7 @@
     "@cliqz/adblocker-electron": "^1.26.6",
     "cross-fetch": "^4.0.0",
     "discord-rich-presence": "^0.0.8",
-    "electron": "^25.2.0",
+    "electron": "^25.3.2",
     "electron-packager": "^17.1.1",
     "electron-store": "^8.1.0",
     "infinite-loop": "^0.2.2"
