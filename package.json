@@ -18,7 +18,7 @@
     "cross-fetch": "^4.0.0",
     "discord-rich-presence": "^0.0.8",
     "electron": "^26.1.0",
-    "electron-packager": "^17.1.1",
+    "electron-packager": "^17.1.2",
     "electron-store": "^8.1.0",
     "infinite-loop": "^0.2.2"
   }
