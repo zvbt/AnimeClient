@@ -2,7 +2,7 @@ const Store = require("electron-store");
 const storage = new Store();
 
 function getWindowSettings() {
-  const default_url = "http://127.0.0.1:5500/";
+  const default_url = "http://ac.akali.best/";
 
   const url = storage.get("page_url");
   if (url) return url;
