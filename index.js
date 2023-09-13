@@ -124,15 +124,15 @@ async function createWindow() {
     }
   });
 
-  //javascript injection
-  contents.on("dom-ready", () => {
-    contents.executeJavaScript(`
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = 'https://ac.akali.best/inject.js';
-      document.head.appendChild(script);
-    `);
-  });
+  // //javascript injection
+  // contents.on("dom-ready", () => {
+  //   contents.executeJavaScript(`
+  //     const script = document.createElement('script');
+  //     script.type = 'text/javascript';
+  //     script.src = 'https://ac.akali.best/inject.js';
+  //     document.head.appendChild(script);
+  //   `);
+  // });
 
   mainWindow.on("closed", () => {
     mainWindow = null;

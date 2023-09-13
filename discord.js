@@ -14,8 +14,8 @@ module.exports = function discord(mainWindow) {
 
   if (title.match("AnimeClient")) {
     discordClient.updatePresence({
-      details: "Home Page",
-      state: "v2.0",
+      details: "     ",
+      state: "     ",
       largeImageKey: "logo",
       largeImageText: "AnimeClient v2.0",
       smallImageKey: "none",
@@ -23,7 +23,7 @@ module.exports = function discord(mainWindow) {
       buttons: [
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
@@ -46,7 +46,7 @@ module.exports = function discord(mainWindow) {
       buttons: [
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
@@ -70,7 +70,7 @@ module.exports = function discord(mainWindow) {
         },
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
@@ -90,7 +90,7 @@ module.exports = function discord(mainWindow) {
       buttons: [
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
@@ -110,7 +110,7 @@ module.exports = function discord(mainWindow) {
         },
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
@@ -139,7 +139,7 @@ module.exports = function discord(mainWindow) {
         },
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
@@ -156,7 +156,7 @@ module.exports = function discord(mainWindow) {
       buttons: [
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
@@ -177,7 +177,7 @@ module.exports = function discord(mainWindow) {
         },
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
@@ -197,7 +197,7 @@ module.exports = function discord(mainWindow) {
       buttons: [
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
@@ -217,7 +217,7 @@ module.exports = function discord(mainWindow) {
         },
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
@@ -234,7 +234,7 @@ module.exports = function discord(mainWindow) {
       buttons: [
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
@@ -253,7 +253,7 @@ module.exports = function discord(mainWindow) {
         },
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
@@ -277,7 +277,7 @@ module.exports = function discord(mainWindow) {
       buttons: [
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
@@ -292,7 +292,7 @@ module.exports = function discord(mainWindow) {
       buttons: [
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
@@ -309,7 +309,7 @@ module.exports = function discord(mainWindow) {
       buttons: [
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
@@ -333,7 +333,7 @@ module.exports = function discord(mainWindow) {
         },
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
@@ -351,7 +351,7 @@ module.exports = function discord(mainWindow) {
       buttons: [
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
@@ -378,7 +378,7 @@ module.exports = function discord(mainWindow) {
         },
         {
           label: "Download the app",
-          url: "https://zvbt.github.io/",
+          url: "https://zvbt.github.io/AnimeClient/",
         },
       ],
     });
