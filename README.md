@@ -10,7 +10,10 @@ An application that brings together several anime streaming platforms
 
 <details>
   <summary>Preview</summary>
-  No preview atm, im rebuilding the UI
+  <img src="https://r2.e-z.host/7ed0180f-b228-49a7-be1e-0183c1938777/2ipl964y.png">
+  <img src="https://r2.e-z.host/7ed0180f-b228-49a7-be1e-0183c1938777/q4pved6n.png">
+  <img src="https://r2.e-z.host/7ed0180f-b228-49a7-be1e-0183c1938777/40vtzzws.png">
+  Only this RPC work for now.
 </details>
 
 ## Building from source
