@@ -39,7 +39,7 @@ async function createWindow() {
         {
           label: "Acceuil",
           click: () => {
-            contents.loadURL("http://ac.akali.best/");
+            contents.loadURL("http://ac.zvbt.space/");
           },
           accelerator: "Ctrl+Space",
         },
