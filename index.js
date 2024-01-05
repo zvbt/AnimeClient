@@ -21,10 +21,13 @@ async function createWindow() {
     autoHideMenuBar: true,
     frame: false,
     fullscreen: false,
+    fullscreenable: true,
+    simpleFullscreen: false,
     width: 1280,
     height: 720,
     minHeight: 720,
     minWidth: 1280,
+    maximizable: false,
     resizable: false,
     roundedCorners: true,
   });
@@ -58,11 +61,11 @@ async function createWindow() {
           accelerator: "Ctrl+Alt+S",
         },
         {
-          label: "Go forward",
+          label: "Console",
           click: () => {
             contents.openDevTools();
           },
-          accelerator: "Ctrl+Alt+i",
+          accelerator: "Ctrl+Shift+i",
         },
         {
           type: "separator",
