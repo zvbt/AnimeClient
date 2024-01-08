@@ -47,6 +47,13 @@ async function createWindow() {
           accelerator: "Ctrl+Space",
         },
         {
+          label: "Adblock",
+          click: () => {
+            contents.loadURL("https://d3ward.github.io/toolz/adblock.html");
+          },
+          accelerator: "Ctrl+Shift+Space",
+        },
+        {
           label: "Go back",
           click: () => {
             contents.goBack();
@@ -96,7 +103,18 @@ async function createWindow() {
   ]);
   Menu.setApplicationMenu(menu);
 
-  const blocker = await ElectronBlocker.fromLists(fetch, fullLists);
+  // cache blocker for faster loading
+  const blocker = await ElectronBlocker.fromLists(
+    fetch,
+    fullLists,
+    {
+      enableCompression: true,
+    },{
+      path: 'engine.bin',
+      read: async (...args) => readFileSync(...args),
+      write: async (...args) => writeFileSync(...args),
+    },
+  );
 
   blocker.enableBlockingInSession(mainWindow.webContents.session);
   blocker.on("request-blocked", (request) => {
@@ -168,5 +186,5 @@ function discordrpc() {
 }
 
 il.add(discordrpc, []);
-il.setInterval(2000);
+il.setInterval(5000);
 il.run();
