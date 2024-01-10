@@ -30,3 +30,5 @@ Background videos [here](https://github.com/zvbt/aclient-main-page/tree/main/ass
 <br>
 
 - It can be done better but i'm lazy
+
+- For Mac users, please note that you'll need to compile the application yourself, as I currently lack access to a Mac for testing or creating an installer.
