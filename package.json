@@ -8,10 +8,9 @@
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "win": "electron-builder --x64",
-    "linux": "electron-builder --linux",
-    "mac": "electron-builder --macos",
-    "publish": "electron-builder --x64 --publish always"
+    "win": "electron-builder --x64 --publish always",
+    "linux": "electron-builder --linux --publish always",
+    "mac": "electron-builder --macos --publish always"
   },
   "author": "zvbt",
   "license": "MIT",
@@ -48,6 +47,13 @@
       "publish": [
         "github"
       ]
-    }
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "build/logo.png",
+      "publish": [
+        "github"
+      ]
   }
+}
 }
