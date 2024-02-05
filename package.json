@@ -23,7 +23,7 @@
     "infinite-loop": "^0.2.2"
   },
   "devDependencies": {
-    "electron": "^28.2.0",
+    "electron": "^28.2.1",
     "electron-builder": "^24.9.1"
   },
   "build": {
