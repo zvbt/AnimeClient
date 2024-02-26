@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "electron": "^28.2.3",
-    "electron-builder": "^24.9.1"
+    "electron-builder": "^24.12.0"
   },
   "build": {
     "appId": "com.zvbt.animeclient",
