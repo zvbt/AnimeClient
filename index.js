@@ -10,6 +10,8 @@ const {
 } = require("@cliqz/adblocker-electron");
 const { getWindowSettings, saveBounds } = require("./settings");
 const discord = require("./discord");
+const InfiniteLoop = require("infinite-loop");
+let il = new InfiniteLoop();
 
 async function createWindow() {
   mainWindow = new BrowserWindow({
@@ -123,7 +125,7 @@ async function createWindow() {
   });
 
   mainWindow.loadURL(url);
-  mainWindow.setTitle("AnimeClient v2.0");
+  mainWindow.setTitle("AnimeClient v2.0.4");
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
     return { action: "deny" };
@@ -162,10 +164,7 @@ async function createWindow() {
     mainWindow = null;
   });
 
-  mainWindow.setIcon("./build/logo.ico");
-
-
-
+  mainWindow.setIcon("./build/logo.png");
 }
 
 // updater
@@ -194,10 +193,23 @@ autoUpdater.on("update-downloaded", (_event, releaseNotes, releaseName) =>{
     if (returnValue.response === 0) autoUpdater.quitAndInstall()
   })
 })
-
+function discordrpc() {
+  discord(mainWindow);
+}
 app.on("ready", () => {
   createWindow();
-  discord(mainWindow);
+  if (process.platform === 'win32'){
+    console.log('Windows')
+    il.add(discordrpc, []);
+    il.setInterval(5000);
+    il.run();
+  } if (process.platform === 'linux'){
+    console.log('Linux')
+    // No discord rpc on linux
+    // I sill need to learn linux a bit more for that 
+  } if (process.platform === 'darwin'){
+    console.log('MacOS')
+  }
 });
 
 app.on("window-all-closed", () => {
@@ -211,14 +223,3 @@ app.on("activate", () => {
     createWindow();
   }
 });
-
-const InfiniteLoop = require("infinite-loop");
-const { release } = require("os");
-let il = new InfiniteLoop();
-function discordrpc() {
-  discord(mainWindow);
-}
-
-il.add(discordrpc, []);
-il.setInterval(5000);
-il.run();
