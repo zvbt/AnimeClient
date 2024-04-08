@@ -4,6 +4,7 @@
 <p align="center">
 	<a href="https://github.com/zvbt/AnimeClient/releases/latest"><img src="https://img.shields.io/github/v/release/zvbt/AnimeClient?style=for-the-badge"></a>
 	<a href="https://github.com/zvbt/AnimeClient/releases"><img src="https://img.shields.io/github/downloads/zvbt/AnimeClient/total.svg?style=for-the-badge"></a>
+	<a href="https://github.com/zvbt/AnimeClient/releases"><img src="https://img.shields.io/aur/version/animeclient-bin?style=for-the-badge"></a>
 </p>
 
 An application that brings together several anime streaming platforms
