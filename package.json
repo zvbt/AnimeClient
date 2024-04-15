@@ -15,7 +15,7 @@
   "author": "zvbt",
   "license": "MIT",
   "dependencies": {
-    "@cliqz/adblocker-electron": "^1.27.0",
+    "@cliqz/adblocker-electron": "^1.27.1",
     "cross-fetch": "^4.0.0",
     "discord-rich-presence": "^0.0.8",
     "electron-store": "^8.2.0",
