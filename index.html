@@ -13,21 +13,21 @@
     <meta property="og:url" content="https://zvbt.github.io/AnimeClient/" />
     <meta property="og:title" content="AnimeClient - Anime Player" />
     <meta property="og:description" content="An application that brings together several anime streaming platforms vostfr/vf sub/dub" />
-    <meta property="og:image" content="https://i.imgur.com/xZmvCGu.png" />
+    <meta property="og:image" content="https://i.imgur.com/NGJwflq.png" />
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://zvbt.github.io/AnimeClient/" />
     <meta property="twitter:title" content="AnimeClient - Anime Player" />
     <meta property="twitter:description" content="An application that brings together several anime streaming platforms vostfr/vf sub/dub" />
-    <meta property="twitter:image" content="https://i.imgur.com/xZmvCGu.png" />
+    <meta property="twitter:image" content="https://i.imgur.com/NGJwflq.png" />
     <style>
         body {
             background: #111;
             color: #eee;
-            font-family: "Lato", sans-serif;
+            font-family: "Karla", sans-serif;
         }
     </style>
     <link rel="stylesheet" href="./css/index.css" />
-    <link link href="https://fonts.googleapis.com/css?family=Lato:400|Raleway:700" rel="stylesheet" />
+    <link link href="https://fonts.googleapis.com/css?family=Karla:400|Raleway:700" rel="stylesheet" />
     <title>AnimeClient - Anime Player</title>
 </head>
 
@@ -43,13 +43,14 @@
             <div class="providers">
                 <div>Streaming services:</div>
                 <div class="container">
-                    <a href="https://crunchyroll.com" target="_blank" noref noopener title="Crunchyroll"><img
-                            src="./assets/providers/crunchyroll.png" /></a>
-                    <a href="https://voiranime.com/" target="_blank" noref noopener title="voiranime"><img
+                    <a href="https://animationdigitalnetwork.fr/" target="_blank" noref noopener title="AnimeDigitalNetwork"><img
+                            src="./assets/providers/adn.png" /></a>
+
+                    <a href="https://voiranime.com/" target="_blank" noref noopener title="Voiranime"><img
                             src="./assets/providers/voiranime.png" /></a>
-                    <a href="hhttps://www.neko-sama.fr/" target="_blank" noref noopener title="neko-sama"><img
+                    <a href="hhttps://www.neko-sama.fr/" target="_blank" noref noopener title="Neko-sama"><img
                             src="./assets/providers/nekosama.png" /></a>
-                    <a href="https://vostfree.tv/" target="_blank" noref noopener title="vostfree"><img
+                    <a href="https://vostfree.ws/" target="_blank" noref noopener title="Vostfree"><img
                             src="./assets/providers/vostfree.png" /></a>
                 </div>
             </div>
@@ -58,11 +59,11 @@
         <div class="download-container">
             <div class="platforms"><img src="./assets/svg/windows.svg" alt="win" /><img src="./assets/svg/mac.svg"
                     alt="mac" /><img src="./assets/svg/linux.svg" alt="linux" /></div>
-            <button id="download" onclick="location.href='https://github.com/zvbt/AnimeClient/releases/download/v2.0.3/AnimeClient-Setup-2.0.3.exe'">
+            <button id="downloadButton" onclick="download()">
                 <p>Download</p>
-                <p class="version">v2.0.3</p>
+                <p class="version" id="latestVersion">Fetching...</p>
             </button>
-            <a href="https://github.com/zvbt/animeclient/releases/latest/" target="_blank" rel="noopener">Mac and Linux
+            <a href="https://github.com/zvbt/animeclient/releases/latest/" target="_blank" rel="noopener">Linux
                 version available here!</a>
         </div>
     </section>
@@ -70,10 +71,30 @@
         <a href="https://github.com/zvbt/" target="_blank" rel="noopener">Made with ❤️ by zvbt<img class="github"
                 src="./assets/svg/github.svg" alt="github" /></a>
     </footer>
+
+    <script>
+        async function fetchLatestVersion() {
+            const response = await fetch("https://api.github.com/repos/zvbt/AnimeClient/releases/latest");
+            const data = await response.json();
+            return data.tag_name;
+        }
+        fetchLatestVersion().then((latestVersion) => {
+            const latestVersionElement = document.getElementById("latestVersion");
+            latestVersionElement.textContent = latestVersion;
+        });
+
+        async function download() {
+            const latestVersion = await fetchLatestVersion();
+            const versionWithoutV = latestVersion.replace('v', '');
+            const downloadUrl = `https://github.com/zvbt/AnimeClient/releases/download/${latestVersion}/AnimeClient-Setup-${versionWithoutV}.exe`;
+            const downloadButton = document.getElementById("downloadButton");
+            downloadButton.innerHTML = `
+                <p>Download</p>
+                <p class="version">${latestVersion}</p>
+            `;
+            window.location.href = downloadUrl;
+        }
+    </script>
 </body>
 
 </html>
-
-<!--
-This site is a copy of https://yuna.moe/ , if you are the creator of yuna and it bothers you contact me cyadine@skiff.com so that I can remove it thank you.
--->
