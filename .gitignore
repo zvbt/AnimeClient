@@ -1,6 +1,5 @@
 node_modules
-engine.bin
+*.log
+.next
+app
 dist
-client
-settings.json
-publish.sh
