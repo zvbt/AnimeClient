@@ -1,12 +1,11 @@
 import path from 'path'
-import { app, ipcMain } from 'electron'
+import { app, ipcMain, dialog } from 'electron'
 import serve from 'electron-serve'
 import { createWindow } from './helpers'
-import { autoUpdater } from 'electron-updater'
+import { autoUpdater, UpdateInfo } from 'electron-updater'
 import { fetch } from 'cross-fetch'
 import { ElectronBlocker, fullLists, Request } from '@cliqz/adblocker-electron'
 import { readFileSync, writeFileSync } from 'fs'
-
 const isProd = process.env.NODE_ENV === 'production'
 
 if (isProd) {
@@ -70,6 +69,33 @@ if (isProd) {
   }
 })()
 
+
+// updater
+autoUpdater.on("update-available", (info: UpdateInfo) => {
+  const releaseNotes = Array.isArray(info.releaseNotes) ? info.releaseNotes.map(note => note.note).join('\n') : info.releaseNotes;
+  const dialogOpts: Electron.MessageBoxOptions = {
+    type: 'info',
+    buttons: ['Ok'],
+    title: 'Application Update',
+    message: process.platform === 'win32' ? releaseNotes : info.releaseName,
+    detail: 'A new version is being downloaded.'
+  };
+  dialog.showMessageBoxSync(dialogOpts);
+});
+
+autoUpdater.on("update-downloaded", (info: UpdateInfo) => {
+  const releaseNotes = Array.isArray(info.releaseNotes) ? info.releaseNotes.map(note => note.note).join('\n') : info.releaseNotes;
+  const dialogOpts: Electron.MessageBoxOptions = {
+    type: 'info',
+    buttons: ['Restart', 'Later'],
+    title: 'Application Update',
+    message: process.platform === 'win32' ? releaseNotes : info.releaseName,
+    detail: 'A new version has been downloaded. Restart the application to apply the updates.'
+  };
+  dialog.showMessageBox(dialogOpts).then((returnValue) => {
+    if (returnValue.response === 0) autoUpdater.quitAndInstall();
+  });
+});
   
 
 app.on('window-all-closed', () => {
