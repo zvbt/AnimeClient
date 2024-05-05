@@ -6,7 +6,7 @@ import Navbar from '../components/navbar'
 export default function HomePage() {
   return (
     <React.Fragment>
-     
+      <title>AnimeClient</title>
 <div className="ctp-mocha relative h-screen bg-ctp-mantle">
                 <Navbar />
                 <video 
