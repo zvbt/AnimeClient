@@ -6,6 +6,7 @@ import { autoUpdater, UpdateInfo } from 'electron-updater'
 import { fetch } from 'cross-fetch'
 import { ElectronBlocker, fullLists, Request } from '@cliqz/adblocker-electron'
 import { readFileSync, writeFileSync } from 'fs'
+import { discord } from './discord'
 const isProd = process.env.NODE_ENV === 'production'
 
 if (isProd) {
@@ -40,6 +41,16 @@ if (isProd) {
     const port = process.argv[2]
     await mainWindow.loadURL(`http://localhost:${port}/home`)
 
+    if (process.platform === 'win32'){
+    console.log('Windows')
+    discord(mainWindow)
+  } if (process.platform === 'linux'){
+    console.log('Linux')
+    // No discord rpc on linux
+    // I sill need to learn linux a bit more for that 
+  } if (process.platform === 'darwin'){
+    console.log('MacOS')
+  }
 
     const blocker = await ElectronBlocker.fromLists(
     fetch,
@@ -58,14 +69,14 @@ if (isProd) {
     console.log("blocked 1", request.tabId, request.url);
   });
 
-  mainWindow.setTitle("AnimeClient v2.0.4");
+  mainWindow.setTitle("AnimeClient");
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
     return { action: "deny" };
   });
   
   autoUpdater.checkForUpdates();
-
+  mainWindow.setIcon("../build/logo.png");
   }
 })()
 
