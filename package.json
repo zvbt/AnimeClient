@@ -3,7 +3,7 @@
   "name": "animeclient",
   "productname": "animeclient",
   "description": "An application that brings together several anime streaming platforms vostfr/vf sub/dub",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "author": "zvbt",
   "license": "MIT",
   "main": "app/background.js",
