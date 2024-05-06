@@ -1,8 +1,7 @@
 node_modules
-*.log
-.next
-app
-dist
-bun.lockb
 engine.bin
+dist
+client
+settings.json
 publish.sh
+bun.lockb
