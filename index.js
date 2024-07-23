@@ -124,6 +124,14 @@ autoUpdater.on("update-downloaded", (_event, releaseNotes, releaseName) =>{
 
 app.on("ready", () => {
   createWindow();
+  if (process.platform === 'win32'){
+    console.log('Windows')
+    discord(mainWindow);
+  } if (process.platform === 'linux'){
+    console.log('Linux')
+  } if (process.platform === 'darwin'){
+    console.log('MacOS')
+  }
 });
 
 app.on("window-all-closed", () => {
