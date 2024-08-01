@@ -10,8 +10,6 @@ discordClient.on("connected", () => {
 });
 
 module.exports = function discord(mainWindow) {
-  let title = mainWindow.getTitle();
-  if (title.match("AnimeClient")) {
     discordClient.updatePresence({
       details: "Watching an anime",
       state: "     ",
@@ -27,6 +25,4 @@ module.exports = function discord(mainWindow) {
         },
       ],
     });
-  }
-
 };
