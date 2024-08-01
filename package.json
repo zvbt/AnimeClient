@@ -1,7 +1,7 @@
 {
   "name": "animeclient",
   "productname": "animeclient",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "main": "index.js",
   "repository": "https://github.com/zvbt/animeclient",
   "description": "An application that brings together several anime streaming platforms vostfr/vf sub/dub ",
