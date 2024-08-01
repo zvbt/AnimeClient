@@ -15,14 +15,14 @@
   "author": "zvbt",
   "license": "MIT",
   "dependencies": {
-    "@cliqz/adblocker-electron": "^1.30.0",
+    "@cliqz/adblocker-electron": "^1.31.1",
     "cross-fetch": "^4.0.0",
     "discord-rich-presence": "^0.0.8",
     "electron-store": "^10.0.0",
-    "electron-updater": "^6.3.1"
+    "electron-updater": "^6.3.2"
   },
   "devDependencies": {
-    "electron": "^31.3.0",
+    "electron": "^31.3.1",
     "electron-builder": "^24.13.3"
   },
   "build": {
