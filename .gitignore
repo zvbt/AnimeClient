@@ -5,3 +5,4 @@ client
 settings.json
 publish.sh
 bun.lockb
+build.sh
