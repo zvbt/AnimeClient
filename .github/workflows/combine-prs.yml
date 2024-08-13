@@ -1,2 +1,0 @@
-- name: combine-prs
-  uses: github/combine-prs@v5.1.0
