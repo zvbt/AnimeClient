@@ -19,7 +19,7 @@
     "cross-fetch": "^4.0.0",
     "discord-rich-presence": "^0.0.8",
     "electron-store": "^10.0.0",
-    "electron-updater": "^6.3.3"
+    "electron-updater": "^6.3.4"
   },
   "devDependencies": {
     "electron-builder": "^24.13.3"
