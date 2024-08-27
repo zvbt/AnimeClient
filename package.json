@@ -1,7 +1,7 @@
 {
   "name": "animeclient",
-  "productname": "animeclient",
-  "version": "2.0.9",
+  "productname": "AnimeClient",
+  "version": "2.1.0",
   "main": "index.js",
   "repository": "https://github.com/zvbt/animeclient",
   "description": "An application that brings together several anime streaming platforms vostfr/vf sub/dub ",
@@ -22,37 +22,34 @@
     "electron-updater": "^6.3.3"
   },
   "devDependencies": {
-    "electron": "^31.3.1",
     "electron-builder": "^24.13.3"
   },
   "build": {
-    "appId": "com.zvbt.animeclient",
-    "productName": "AnimeClient",
-    "directories": {
-      "output": "dist"
-    },
+    "appId": "AnimeClient",
     "files": [
       "index.js",
       "settings.js",
       "discord.js",
       "build/**"
     ],
-    "asarUnpack": [
-      "locales/**"
-    ],
     "win": {
       "target": "nsis",
-      "icon": "build/logo.ico",
-      "publish": [
-        "github"
-      ]
+      "icon": "./build/logo.ico",
+      "sign": "sign.js"
     },
     "linux": {
       "target": "AppImage",
-      "icon": "build/logo.png",
-      "publish": [
-        "github"
-      ]
+      "icon": "./build/logo.png"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "./build/logo.png"
+    },
+    "artifactName": "${productName}_Setup_${version}.${ext}",
+    "electronVersion": "31.3.1+wvcus",
+    "electronDownload": {
+      "version": "31.3.1+wvcus",
+      "mirror": "https://github.com/castlabs/electron-releases/releases/download/v"
     }
   }
 }

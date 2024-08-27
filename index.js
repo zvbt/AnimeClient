@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, dialog } = require("electron");
+const { app, BrowserWindow, Menu, dialog, components } = require("electron");
 const { fetch } = require("cross-fetch");
 const path = require("path");
 const { autoUpdater } = require("electron-updater");
@@ -111,7 +111,24 @@ autoUpdater.on("update-downloaded", (_event, releaseNotes, releaseName) =>{
 
 
 
-app.on("ready", () => {
+// app.on("ready", () => {
+//   if (process.platform === 'win32'){
+//     console.log('Windows')
+//     createWindow();
+//     discord(mainWindow);
+//   } if (process.platform === 'linux'){
+//     console.log('Linux')
+//     createWindow();
+//   } if (process.platform === 'darwin'){
+//     console.log('MacOS')
+//     createWindow();
+//   }
+// });
+
+
+app.whenReady().then(async () => {
+  await components.whenReady();
+  console.log('components ready:', components.status());
   if (process.platform === 'win32'){
     console.log('Windows')
     createWindow();
@@ -130,6 +147,7 @@ app.on("window-all-closed", () => {
     app.quit();
   }
 });
+
 
 app.on("activate", () => {
   if (mainWindow === null) {
