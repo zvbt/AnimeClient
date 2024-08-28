@@ -26,6 +26,11 @@ It is recommended to use [Visual Studio Code](https://code.visualstudio.com)
 2. Install depedencies `npm install`
 3. Start the project `npm start`
 
+- You will need to sign the app before using Netflix or Crunchyroll
+1. Intall EVS module `python3 -m pip install --upgrade castlabs-evs`
+2. If you dont have an account you need to create one `python3 -m castlabs_evs.account signup`
+3. Now when ever you build the app with `npm run win` it whille sign the app automatically
+
 Background videos [here](https://github.com/zvbt/aclient-main-page/tree/main/assets/videos)
 
 <br>
