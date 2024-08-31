@@ -1,14 +1,14 @@
 {
   "name": "animeclient",
   "productname": "AnimeClient",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "main": "index.js",
   "repository": "https://github.com/zvbt/animeclient",
   "description": "An application that brings together several anime streaming platforms vostfr/vf sub/dub ",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "win": "electron-builder --x64",
+    "win": "electron-builder --x64 --publish always",
     "linux": "electron-builder --linux --publish always",
     "mac": "electron-builder --macos --publish always"
   },
