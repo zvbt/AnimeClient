@@ -64,7 +64,7 @@ async function createWindow() {
     console.log("blocked 1", request.tabId, request.url);
   });
 
-  mainWindow.loadURL("http://localhost:3000");
+  mainWindow.loadURL("http://ac.zvbt.space");
   mainWindow.setTitle("AnimeClient");
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
