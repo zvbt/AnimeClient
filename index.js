@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, dialog, components } = require("electron");
+const { app, BrowserWindow, Menu, dialog, components, screen } = require("electron");
 const { fetch } = require("cross-fetch");
 const path = require("path");
 const { autoUpdater } = require("electron-updater");
@@ -11,6 +11,20 @@ const {
 const discord = require("./discord");
 
 async function createWindow() {
+  const primaryDisplay = screen.getPrimaryDisplay();
+  const { width, height } = primaryDisplay.workAreaSize;
+
+  let windowWidth = 1279;
+  let windowHeight = 720;
+
+  if (width >= 1920 && height >= 1080) {
+    windowWidth = 1599;
+    windowHeight = 900;
+  } else if (width >= 1366 && height >= 768) {
+    windowWidth = 1279;
+    windowHeight = 720;
+  }
+
   mainWindow = new BrowserWindow({
     webPreferences: {
       nodeIntegration: true,
@@ -23,10 +37,10 @@ async function createWindow() {
     fullscreen: false,
     fullscreenable: true,
     simpleFullscreen: false,
-    width: 1600,
-    height: 900,
+    width: windowWidth,
+    height: windowHeight,
     maximizable: false,
-    resizable: true,
+    resizable: false,
     roundedCorners: true,
   });
 
@@ -50,13 +64,12 @@ async function createWindow() {
     console.log("blocked 1", request.tabId, request.url);
   });
 
-  mainWindow.loadURL("http://ac.zvbt.space");
+  mainWindow.loadURL("http://localhost:3000");
   mainWindow.setTitle("AnimeClient");
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
     return { action: "deny" };
   });
-
 
   contents.on("dom-ready", (event, url) => {
     let title = mainWindow.getTitle();
@@ -109,23 +122,6 @@ autoUpdater.on("update-downloaded", (_event, releaseNotes, releaseName) =>{
   })
 })
 
-
-
-// app.on("ready", () => {
-//   if (process.platform === 'win32'){
-//     console.log('Windows')
-//     createWindow();
-//     discord(mainWindow);
-//   } if (process.platform === 'linux'){
-//     console.log('Linux')
-//     createWindow();
-//   } if (process.platform === 'darwin'){
-//     console.log('MacOS')
-//     createWindow();
-//   }
-// });
-
-
 app.whenReady().then(async () => {
   await components.whenReady();
   console.log('components ready:', components.status());
@@ -147,7 +143,6 @@ app.on("window-all-closed", () => {
     app.quit();
   }
 });
-
 
 app.on("activate", () => {
   if (mainWindow === null) {
