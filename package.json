@@ -1,7 +1,6 @@
 {
-  "name": "animeclient",
-  "productname": "AnimeClient",
-  "version": "2.1.1",
+  "name": "AnimeClient",
+  "version": "2.1.2",
   "main": "index.js",
   "repository": "https://github.com/zvbt/animeclient",
   "description": "An application that brings together several anime streaming platforms vostfr/vf sub/dub ",
@@ -45,7 +44,6 @@
       "target": "dmg",
       "icon": "./build/logo.png"
     },
-    "artifactName": "${productName}_Setup_${version}.${ext}",
     "electronVersion": "31.3.1+wvcus",
     "electronDownload": {
       "version": "31.3.1+wvcus",

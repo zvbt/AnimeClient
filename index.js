@@ -11,20 +11,6 @@ const {
 const discord = require("./discord");
 
 async function createWindow() {
-  const primaryDisplay = screen.getPrimaryDisplay();
-  const { width, height } = primaryDisplay.workAreaSize;
-
-  let windowWidth = 1279;
-  let windowHeight = 720;
-
-  if (width >= 1920 && height >= 1080) {
-    windowWidth = 1599;
-    windowHeight = 900;
-  } else if (width >= 1366 && height >= 768) {
-    windowWidth = 1279;
-    windowHeight = 720;
-  }
-
   mainWindow = new BrowserWindow({
     webPreferences: {
       nodeIntegration: true,
@@ -37,8 +23,8 @@ async function createWindow() {
     fullscreen: false,
     fullscreenable: true,
     simpleFullscreen: false,
-    width: windowWidth,
-    height: windowHeight,
+    width: 1600,
+    height: 900,
     maximizable: false,
     resizable: false,
     roundedCorners: true,
@@ -64,7 +50,7 @@ async function createWindow() {
     console.log("blocked 1", request.tabId, request.url);
   });
 
-  mainWindow.loadURL("http://ac.zvbt.space");
+  mainWindow.loadURL("https://ac.zvbt.space");
   mainWindow.setTitle("AnimeClient");
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
