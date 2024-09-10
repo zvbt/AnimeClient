@@ -7,6 +7,8 @@
 	<a href="https://aur.archlinux.org/packages/animeclient-bin"><img src="https://img.shields.io/aur/version/animeclient-bin?style=for-the-badge"></a>
 </p>
 
+- I will stop trying to fix the app for multiple screen sizes. If anyone wants to do it, you can open a PR on this repo and the [webpage repo](https://github.com/zvbt/aclient-main-page).
+
 An application that brings together several anime streaming platforms
 
 <details>
