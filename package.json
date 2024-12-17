@@ -15,6 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "@cliqz/adblocker-electron": "^1.33.1",
+    "child_process": "^1.0.2",
     "cross-fetch": "^4.0.0",
     "discord-rich-presence": "^0.0.8",
     "electron-store": "^10.0.0",
@@ -34,7 +35,9 @@
     "win": {
       "target": "nsis",
       "icon": "./build/logo.ico",
-      "sign": "sign.js"
+      "signtoolOptions": {
+        "sign": "./sign.js"
+      }
     },
     "linux": {
       "target": "AppImage",
