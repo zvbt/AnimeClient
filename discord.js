@@ -21,7 +21,7 @@ module.exports = function discord(mainWindow) {
       buttons: [
         {
           label: "Download the app",
-          url: "https://animeclient.zvbt.space",
+          url: "https://animeclient.zvbt.cc",
         },
       ],
     });
