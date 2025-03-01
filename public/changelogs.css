@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: transparent;
+    color: #fff;
+    padding: 20px;
+    margin: 0;
+}
+
+#changelog {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+#changelog h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#changelog p {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+#changelog div {
+    line-height: 1.6;
+}
+
+#changelog a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+#changelog a:hover {
+    text-decoration: underline;
+}
+
+code {
+    background-color: #444;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+pre code {
+    background-color: #333;
+    color: #f8f8f2;
+    padding: 10px;
+    border-radius: 8px;
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+ol li {
+    margin-bottom: 10px;
+}

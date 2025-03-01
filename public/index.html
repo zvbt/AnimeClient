@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AnimeClient</title>
+        <link rel="stylesheet" href="./style.css" />
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #171717;
+            }
+
+            .flag img {
+                display: inline-block;
+                max-width: 150px;
+                width: 80px;
+                height: auto;
+                padding: 5px;
+                cursor: pointer;
+                border-radius: 100%;
+            }
+            h2{
+                color: white;
+                margin-bottom: 1em;
+                justify-content: center;
+                align-items: center;
+                font-weight: 600;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="overlay"></div>
+        <nav class="navbar">
+            <div class="drag-area">
+                <img src="./assets/logo.png" alt="Logo" class="logo" />
+            </div>
+
+            <div class="navbar-right">
+                <div class="control-buttons">
+                    <button class="minimize-btn">_</button>
+                    <button class="close-btn">x</button>
+                </div>
+            </div>
+        </nav>
+
+        <h2>Select your language</h2>
+        <div class="flag">
+            <img
+                src="./assets/fr.png"
+                alt="French"
+                class="lang-btn"
+                onclick="redirectTo('french.html')"
+            />
+            <img
+                src="./assets/en.png"
+                alt="English"
+                class="lang-btn"
+                onclick="redirectTo('english.html')"
+            />
+        </div>
+
+        <script src="./script.js"></script>
+    </body>
+</html>

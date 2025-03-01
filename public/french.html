@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeClient</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <!-- Navbar -->
+    <nav class="navbar">
+            <!-- Logo -->
+            <div class="navbar-left">
+                <img src="./assets/logo.png" alt="Logo" class="logo" onclick="redirectTo('./index.html')">
+
+                <!-- Navbar Buttons Container (left-aligned) -->
+                <div class="buttons-container">
+                    <button class="navbar-btn" data-url="https://anilist.co" data-favicon="./assets/favicon/anilist.png">
+                        <img src="./assets/favicon/anilist.png" alt="Favicon" class="favicon-img">
+                        Anilist
+                    </button>
+                    <button class="navbar-btn" data-url="https://voiranime.com" data-favicon="./assets/favicon/voiranime.png">
+                        <img src="./assets/favicon/voiranime.png" alt="Favicon" class="favicon-img">
+                        Voiranime
+                    </button>
+                    <button class="navbar-btn" data-url="https://vostfree.ws" data-favicon="./assets/favicon/vostfree.png">
+                        <img src="./assets/favicon/vostfree.png" alt="Favicon" class="favicon-img">
+                        Vostfree
+                    </button>
+                    <button class="navbar-btn" data-url="https://www.crunchyroll.com/" data-favicon="./assets/favicon/crunchyroll.png">
+                        <img src="./assets/favicon/crunchyroll.png" alt="Favicon" class="favicon-img">
+                        Crunchyroll
+                    </button>
+                    <button class="navbar-btn" data-url="https://animationdigitalnetwork.com/" data-favicon="./assets/favicon/adn.png">
+                        <img src="./assets/favicon/adn.png" alt="Favicon" class="favicon-img">
+                        ADN
+                    </button>
+                    <button class="navbar-btn" data-url="https://netflix.com" data-favicon="./assets/favicon/netflix.png">
+                        <img src="./assets/favicon/netflix.png" alt="Favicon" class="favicon-img">
+                        Netflix
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Window Control Buttons (right-aligned) -->
+            <div class="navbar-right">
+                <div class="control-buttons">
+                    <button class="minimize-btn">_</button>
+                    <button class="close-btn">x</button>
+                </div>
+            </div>
+
+    </nav>
+
+    <!-- Page Content -->
+    <div class="lang-container">
+        <webview src="./changelogs.html"></webview>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeClient</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <!-- Navbar -->
+    <nav class="navbar">
+            <!-- Logo -->
+            <div class="navbar-left">
+                <img src="./assets/logo.png" alt="Logo" class="logo" onclick="redirectTo('./index.html')">
+
+                <!-- Navbar Buttons Container (left-aligned) -->
+                <div class="buttons-container">
+                    <button class="navbar-btn" data-url="https://9animetv.to/home" data-favicon="./assets/favicon/9anime.png">
+                        <img src="./assets/favicon/9anime.png" alt="Favicon" class="favicon-img">
+                        9animetv
+                    </button>
+                    <button class="navbar-btn" data-url="https://aniwave.to/home" data-favicon="./assets/favicon/aniwave.png">
+                        <img src="./assets/favicon/aniwave.png" alt="Favicon" class="favicon-img">
+                        Aniwave
+                    </button>
+                    <button class="navbar-btn" data-url="https://animeflix.shop/" data-favicon="./assets/favicon/animeflix.png">
+                        <img src="./assets/favicon/animeflix.png" alt="Favicon" class="favicon-img">
+                        Animeflix
+                    </button>
+                    <button class="navbar-btn" data-url="https://www.crunchyroll.com/" data-favicon="./assets/favicon/crunchyroll.png">
+                        <img src="./assets/favicon/crunchyroll.png" alt="Favicon" class="favicon-img">
+                        Crunchyroll
+                    </button>
+                    <button class="navbar-btn" data-url="https://netflix.com" data-favicon="./assets/favicon/netflix.png">
+                        <img src="./assets/favicon/netflix.png" alt="Favicon" class="favicon-img">
+                        Netflix
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Window Control Buttons (right-aligned) -->
+            <div class="navbar-right">
+                <div class="control-buttons">
+                    <button class="minimize-btn">_</button>
+                    <button class="close-btn">x</button>
+                </div>
+            </div>
+
+    </nav>
+
+    <!-- Page Content -->
+    <div class="lang-container">
+        <webview src="./changelogs.html"></webview>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

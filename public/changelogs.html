@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog - AnimeClient</title>
+    <link rel="stylesheet" href="changelogs.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked@2.0.1/lib/marked.min.js"></script>
+</head>
+<body>
+    <div id="changelog"></div>
+
+    <script>
+        async function fetchChangelog() {
+            const repoOwner = 'zvbt';
+            const repoName = 'animeclient';
+            const url = `https://api.github.com/repos/${repoOwner}/${repoName}/releases/latest`;
+
+            try {
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error(`GitHub API Error: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+
+                const changelogContainer = document.getElementById('changelog');
+                const markdownContent = data.body;
+                const htmlContent = marked(markdownContent);
+                
+                changelogContainer.innerHTML = `
+                    <h2>${data.tag_name}</h2>
+                    <p>Published on: ${new Date(data.published_at).toLocaleDateString()}</p>
+                    <div>${htmlContent}</div>
+                `;
+            } catch (error) {
+                console.error('Error fetching changelog:', error);
+                document.getElementById('changelog').innerText = `Failed to load changelog: ${error.message}`;
+            }
+        }
+
+        window.onload = fetchChangelog;
+    </script>
+</body>
+</html>
