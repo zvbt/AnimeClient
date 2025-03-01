@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, dialog, components, screen } = require("electron");
+const { app, BrowserWindow, dialog, components, ipcMain } = require("electron");
 const { fetch } = require("cross-fetch");
 const path = require("path");
 const { autoUpdater } = require("electron-updater");
@@ -17,16 +17,17 @@ async function createWindow() {
       contextIsolation: true,
       nodeIntegrationInSubFrames: true,
       webviewTag: true,
+      preload: path.join(__dirname, "preload.js"),
     },
     autoHideMenuBar: true,
     frame: false,
     fullscreen: false,
     fullscreenable: true,
-    simpleFullscreen: false,
-    width: 1600,
-    height: 900,
-    maximizable: false,
-    resizable: false,
+    simpleFullscreen: true,
+    width: 1280,
+    height: 720,
+    maximizable: true,
+    resizable: true,
     roundedCorners: true,
   });
 
@@ -50,7 +51,7 @@ async function createWindow() {
     console.log("blocked 1", request.tabId, request.url);
   });
 
-  mainWindow.loadURL("https://ac.zvbt.cc");
+  mainWindow.loadFile(path.join(__dirname, 'public', 'index.html'));
   mainWindow.setTitle("AnimeClient");
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
@@ -58,18 +59,13 @@ async function createWindow() {
   });
 
   contents.on("dom-ready", (event, url) => {
-    let title = mainWindow.getTitle();
+  ipcMain.on("minimize-window", () => {
+    mainWindow.minimize();
+  });
 
-    if (title.match("AnimeClient")) {
-      console.log("ac");
-    } else {
-      contents.executeJavaScript(`
-      const style = document.createElement('style');
-      style.type = 'text/css';
-      style.innerHTML = '* { -webkit-app-region: no-drag !important; }';
-      document.head.appendChild(style);
-    `);
-    }
+  ipcMain.on("close-window", () => {
+    mainWindow.close();
+  });
 
     autoUpdater.checkForUpdates();
   });
